@@ -20,7 +20,7 @@ export default function FormLogin(){
 
     return (
         <form onSubmit={handleSubmit} className="user-form">
-            <input type="text" placeholder="E-mail" name="loginEmail" className="input-user-form" value={email} onChange={(e) => setEmail(e.target.value)}/>
+            <input type="email" placeholder="E-mail" name="loginEmail" className="input-user-form" value={email} onChange={(e) => setEmail(e.target.value)}/>
             <input type="password" placeholder="Senha" name="loginPas" className="input-user-form" value={password} onChange={(e) => setPassword(e.target.value)}/>
             <a href="" className="a-user-form">Esqueceu senha?</a>
             <button className="text-blue-950 text-3xl font-bold bg-white h-14 py-2 rounded-full">Entrar</button>

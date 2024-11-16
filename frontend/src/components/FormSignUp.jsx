@@ -22,7 +22,7 @@ export default function FormLogin(){
         <form onSubmit={handleSubmit} className="user-form">
             <h1 className="font-bold text-3xl text-center">Cadastre sua República</h1>
             <input type="text" placeholder="Nome: ex. Poquito Más" name="signName" className="input-user-form" value={name} onChange={(e) => setName(e.target.value)}/>
-            <input type="text" placeholder="E-mail" name="signEmail" className="input-user-form" value={email} onChange={(e) => setEmail(e.target.value)}/>
+            <input type="email" placeholder="E-mail" name="signEmail" className="input-user-form" value={email} onChange={(e) => setEmail(e.target.value)}/>
             <input type="password" placeholder="Senha" name="signPas" className="input-user-form" value={password} onChange={(e) => setPassword(e.target.value)}/>
             <input type="password" placeholder="Confirme a senha" name="sign2Pas" className="input-user-form" value={password2} onChange={(e) => setPassword2(e.target.value)}/>
             <input type="number" placeholder="Whatsapp" name="signNumber" className="input-user-form" value={number} onChange={(e) => setNumber(e.target.value)}/>
