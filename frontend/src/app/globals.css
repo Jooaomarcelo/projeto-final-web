@@ -25,4 +25,17 @@ body {
   .container {
     @apply max-w-7xl mx-auto px-10;
   }
+
+  .user-form{
+    @apply flex flex-col gap-5 w-[500px] h-min bg-gradient-to-b from-blue-800/70 to-blue-950/90 py-20 px-14 rounded-[80px] shadow-lg;
+  }
+
+  .input-user-form{
+    @apply h-20 rounded-xl text-black text-2xl placeholder-black pl-4;
+  }
+
+  .a-user-form{
+    @apply text-white text-lg underline text-center;
+  }
+
 }

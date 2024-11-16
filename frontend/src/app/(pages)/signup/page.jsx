@@ -1,16 +1,12 @@
 import UserPage from "@/components/template/UserPage";
-import FormLogin from "@/components/FormLogin";
+import FormSignUp from "@/components/FormSignUp";
 
 export default function Home() {
   return (
     <main>
       <UserPage>
-        <FormLogin></FormLogin>
+        <FormSignUp></FormSignUp>
       </UserPage>
     </main>
   );
 }
-
-//<Pagina>
-//  <Carrosel />
-//</Pagina>
