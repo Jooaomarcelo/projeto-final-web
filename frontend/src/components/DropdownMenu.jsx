@@ -6,15 +6,15 @@ export default function DropdownMenu({ ref }) {
   const [userInputs, setUserInputs, errors, checkLogin] = useLogin();
 
   /*
-    Description: function responsible for changing the value of userInputs.
-    */
+  Description: function responsible for changing the value of userInputs.
+  */
   const handleChange = (e) => {
     setUserInputs({ ...userInputs, [e.target.name]: e.target.value });
   };
 
   /*
-    Description: function responsible for calling the verification function and preventing the form from submitting directly.
-    */
+  Description: function responsible for calling the verification function and preventing the form from submitting directly.
+  */
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (await checkLogin()) {

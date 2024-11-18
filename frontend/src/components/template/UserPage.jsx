@@ -10,9 +10,13 @@ export default function UserPage({ children }){
     }
 
     return (
-        <section className="flex justify-around items-center bg-[url(/unifei-prg.webp)] bg-cover bg-center h-screen">
-            <button className="text-2xl text-white font-bold py-8 px-16 rounded-full bg-black/60" onClick={handleButtonClick}>Explorar Repúblicas</button>
-            {children}
+        <section className="flex justify-around bg-[url(/unifei-prg.webp)] bg-cover bg-center h-screen">
+            <div className="h-screen flex items-center">
+                <button className="text-2xl text-white font-bold py-8 px-16 rounded-full bg-black/60" onClick={handleButtonClick}>Explorar Repúblicas</button>
+            </div>
+            <div className="h-screen flex items-center">
+                {children}
+            </div>
         </section>
     )
 }
