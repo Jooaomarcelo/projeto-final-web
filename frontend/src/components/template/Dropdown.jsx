@@ -1,19 +1,17 @@
 'use client';
 
-import { useState } from 'react';
-
+import useDropdown from '../../hooks/useDropdown';
 import UserButton from '../UserButton';
 import DropdownMenu from '../DropdownMenu';
 
 export default function Dropdown() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDropdown = () => setIsOpen(!isOpen);
+  const { isOpen, toggleDropdown, dropdownRef, userButtonRef } = useDropdown();
 
   return (
-    <div className="flex flex-col absolute right-20 w-72 items-center">
-      <UserButton action={toggleDropdown} />
-      {isOpen && <DropdownMenu />}
+    <div className="flex flex-col absolute right-20 w-72 items-center z-50">
+      {/* Associate reference */}
+      <UserButton action={toggleDropdown} ref={userButtonRef} />
+      {isOpen && <DropdownMenu ref={dropdownRef} />}
     </div>
   );
 }
