@@ -31,7 +31,7 @@ body {
   }
 
   .input-user-form{
-    @apply h-20 rounded-xl text-black text-2xl placeholder-black pl-4;
+    @apply h-20 rounded-xl text-black text-2xl placeholder-black pl-4 w-full;
   }
 
   .a-user-form{
