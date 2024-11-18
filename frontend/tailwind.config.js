@@ -11,6 +11,10 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      screens: {
+        'h-sm': { 'raw': '(max-height: 780px)' },
+        'h-md': { 'raw': '(max-height: 900px)' },
+      }
     },
   },
   plugins: [],

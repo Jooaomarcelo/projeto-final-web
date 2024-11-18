@@ -27,7 +27,11 @@ body {
   }
 
   .user-form{
-    @apply flex flex-col gap-5 w-auto max-h-screen overflow-y-auto bg-gradient-to-b from-blue-800/70 to-blue-950/90 py-20 px-14 rounded-[80px] shadow-lg;
+    @apply flex flex-col w-auto max-h-screen h-auto gap-4 py-16 px-14 bg-gradient-to-b from-blue-800/70 to-blue-950/90 shadow-lg rounded-[80px];
+  }
+
+  .form-height{
+    @apply h-sm:gap-2 h-sm:py-10 h-md:gap-3 h-md:py-5;
   }
 
   .input-user-form{
