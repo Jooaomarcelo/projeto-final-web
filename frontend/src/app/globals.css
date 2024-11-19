@@ -38,15 +38,11 @@ h2 {
   }
 
   .user-form {
-    @apply flex flex-col w-auto max-h-screen h-auto gap-4 py-16 px-14 bg-gradient-to-b from-blue-800/70 to-blue-950/90 shadow-lg rounded-[80px];
-  }
-
-  .form-height {
-    @apply h-sm:gap-2 h-sm:py-10 h-md:gap-3 h-md:py-5;
+    @apply flex flex-col justify-evenly w-auto gap-4 py-[2rem] px-14 overflow-y-auto bg-gradient-to-b from-blue-800/70 to-blue-950/90 shadow-lg rounded-[80px];
   }
 
   .input-user-form {
-    @apply min-h-10 h-20 rounded-xl text-black text-2xl placeholder-black pl-4 w-full;
+    @apply min-h-10 h-[90%] rounded-xl text-black text-2xl placeholder-black pl-4 w-full;
   }
 
   .a-user-form {

@@ -24,8 +24,8 @@ export default function FormLogin() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="user-form">
-      <div>
+    <form onSubmit={handleSubmit} className="user-form h-[50%]">
+      <div className="h-[20%] min-h-12">
         <input
           type="email"
           placeholder="E-mail"
@@ -36,7 +36,7 @@ export default function FormLogin() {
         />
         {errors && <p className="text-red-500">{errors.email}</p>}
       </div>
-      <div>
+      <div className="h-[20%] min-h-12">
         <input
           type="password"
           placeholder="Senha"
