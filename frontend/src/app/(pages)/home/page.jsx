@@ -1,5 +1,6 @@
 'use client';
 
+import Link from "next/link";
 import Carrosel from '@/components/Carrosel';
 import Explore from '@/components/Explore';
 
@@ -12,11 +13,11 @@ export default function Home() {
             Seja Bem Vindo ao Nosso Site
           </h1>
           <span>Descubra a sua República Universitária em Itajubá</span>
-          <a href="#section">
+          <Link href="#section">
             <div className="mt-5 py-3 px-7 rounded-lg bg-[#DBF5E0] text-black">
               Explorar
             </div>
-          </a>
+          </Link>
         </div>
       </Carrosel>
       <div className="flex flex-col container py-7">

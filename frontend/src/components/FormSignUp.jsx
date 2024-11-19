@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import useSignUp from "@/hooks/useSignUp";
 
 export default function FormLogin(){
@@ -47,7 +48,7 @@ export default function FormLogin(){
                 {errors && <p className="text-red-500">{errors.number}</p>}
             </div>
             <button className="text-blue-950 text-3xl font-bold bg-white h-14 py-2 mt-4 rounded-full">Cadastrar</button>
-            <a href="/" className="a-user-form">Entrar</a>
+            <Link href="/" className="a-user-form">Entrar</Link>
         </form>
     )
 }

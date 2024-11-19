@@ -1,5 +1,6 @@
 'use client';
 
+import Link from "next/link";
 import useLogin from '@/hooks/useLogin';
 
 export default function FormLogin() {
@@ -47,15 +48,11 @@ export default function FormLogin() {
         />
         {errors && <p className="text-red-500">{errors.password}</p>}
       </div>
-      <a href="" className="a-user-form">
-        Esqueceu senha?
-      </a>
+      <Link href="" className="a-user-form">Esqueceu senha?</Link>
       <button className="text-blue-950 text-3xl font-bold bg-white h-14 py-2 rounded-full">
         Entrar
       </button>
-      <a href="/signup" className="a-user-form">
-        Novo aqui?
-      </a>
+      <Link href="/signup" className="a-user-form">Novo aqui?</Link>
     </form>
   );
 }

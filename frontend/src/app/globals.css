@@ -46,7 +46,7 @@ h2 {
   }
 
   .a-user-form {
-    @apply text-white text-lg underline text-center;
+    @apply text-white text-lg text-center hover:underline;
   }
 
   .a-user-unlogged {

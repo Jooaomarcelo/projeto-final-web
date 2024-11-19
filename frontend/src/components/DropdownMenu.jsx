@@ -1,5 +1,6 @@
 'use client';
 
+import Link from "next/link";
 import useLogin from '@/hooks/useLogin';
 
 export default function DropdownMenu({ ref }) {
@@ -53,15 +54,11 @@ export default function DropdownMenu({ ref }) {
           />
           {errors && <p className="text-red-500">{errors.password}</p>}
         </>
-        <a className="text-base font-normal hover:underline" href="#">
-          Esqueceu senha?
-        </a>
+        <Link href="#" className="text-base font-normal hover:underline">Esqueceu senha?</Link>
         <button className="bg-[#0000006b] w-full rounded-full p-2 text-lg font-bold">
           Entrar
         </button>
-        <a className="text-base font-normal hover:underline" href="/signup">
-          Novo aqui?
-        </a>
+        <Link href="/signup" className="text-base font-normal hover:underline">Novo aqui?</Link>
       </div>
     </form>
   );
