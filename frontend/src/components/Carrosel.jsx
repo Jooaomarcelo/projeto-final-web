@@ -33,9 +33,8 @@ export default function Carrosel(props) {
           <SwiperSlide key={item.id}>
             {
               <div
-                className="w-screen relative"
+                className="w-screen relative h-[550px] xl:h-[700px]"
                 style={{
-                  height: '500px',
                   background: `linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url(${item.img})`,
                   backgroundSize: 'cover',
                   backgroundPosition: item.position ?? 'center',

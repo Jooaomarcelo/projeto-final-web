@@ -19,7 +19,7 @@ export default function Home() {
           </a>
         </div>
       </Carrosel>
-      <div className="flex flex-col container py-6 flex-1">
+      <div className="flex flex-col container py-7">
         <h2 className="text-black">Sobre Nós</h2>
         <p className="text-black">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Error officia
