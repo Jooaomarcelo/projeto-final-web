@@ -40,7 +40,7 @@ export default function Explore() {
                         <div className="flex w-full items-center gap-6" >
                             {/* Image */}
                             <div className="w-32 items-start">
-                                <img src={item.image} className="object-cover rounded-full min-w-32" />
+                                <img src={item.image || null} className="object-cover rounded-full min-w-32" />
                             </div>
                             {/* Description */}
                             <div>
