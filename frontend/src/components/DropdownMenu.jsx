@@ -27,7 +27,8 @@ export default function DropdownMenu({ ref }) {
     <form
       ref={ref}
       onSubmit={handleSubmit}
-      className="absolute bg-blue-600 top-full w-full flex flex-col items-center rounded-lg p-4"
+      className="absolute bg-[#2b4981] top-full mt-3 w-full flex flex-col items-center rounded-xl p-4"
+      style={{ boxShadow: 'var(--shadow-dark)' }}
     >
       <div className="flex flex-col items-center mt-2 gap-2">
         <>
@@ -55,7 +56,7 @@ export default function DropdownMenu({ ref }) {
         <a className="text-base font-normal hover:underline" href="#">
           Esqueceu senha?
         </a>
-        <button className="bg-black bg-opacity-70 w-full rounded-full p-2 text-lg font-bold">
+        <button className="bg-[#0000006b] w-full rounded-full p-2 text-lg font-bold">
           Entrar
         </button>
         <a className="text-base font-normal hover:underline" href="/signup">

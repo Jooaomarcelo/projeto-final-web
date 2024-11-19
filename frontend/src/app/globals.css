@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --shadow-dark: 0px 6px 10px rgba(0, 0, 0, 0.6);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,25 +22,38 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+a {
+  cursor: pointer;
+}
+
 @layer components {
   .container {
     @apply max-w-7xl mx-auto px-10;
   }
 
-  .user-form{
+  .user-form {
     @apply flex flex-col w-auto max-h-screen h-auto gap-4 py-16 px-14 bg-gradient-to-b from-blue-800/70 to-blue-950/90 shadow-lg rounded-[80px];
   }
 
-  .form-height{
+  .form-height {
     @apply h-sm:gap-2 h-sm:py-10 h-md:gap-3 h-md:py-5;
   }
 
-  .input-user-form{
+  .input-user-form {
     @apply min-h-10 h-20 rounded-xl text-black text-2xl placeholder-black pl-4 w-full;
   }
 
-  .a-user-form{
+  .a-user-form {
     @apply text-white text-lg underline text-center;
   }
 
+  .a-user-unlogged {
+    @apply h-16 w-16 rounded-full bg-cover bg-center;
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.1),
+        rgba(0, 0, 0, 0.7)
+      ),
+      url('/user-unlogged.svg');
+  }
 }
