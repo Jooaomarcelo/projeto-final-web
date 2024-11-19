@@ -13,14 +13,15 @@ import { register } from 'swiper/element/bundle';
 register();
 
 const data = [
-  { id: 1, img: "/unifei-campus.jpg" },
-  { id: 2, img: "/unifei-prg.webp", position: '100% 5%' },
-  { id: 3, img: "/itajuba.webp" },
+  { id: 1, img: '/unifei-campus.jpg' },
+  { id: 2, img: '/unifei.jpg' },
+  { id: 3, img: '/parque-itajuba.jpg', position: '0 40%' },
 ];
 
-export default function Carrosel({ style }) {
+export default function Carrosel(props) {
   return (
-    <div className={style}>
+    <div className="relative">
+      {props.children}
       <Swiper
         slidesPerView={1}
         pagination={{ clickable: true }}
@@ -32,10 +33,10 @@ export default function Carrosel({ style }) {
           <SwiperSlide key={item.id}>
             {
               <div
-                className="w-full relative"
+                className="w-screen relative"
                 style={{
                   height: '500px',
-                  background: `linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url(${item.img})`,
+                  background: `linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url(${item.img})`,
                   backgroundSize: 'cover',
                   backgroundPosition: item.position ?? 'center',
                 }}
