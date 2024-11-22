@@ -23,7 +23,7 @@ export default function FormLogin(){
             //Contact server with axios.
         }
     }
-    //h-sm:h-10
+    
     return (
         <form onSubmit={handleSubmit} className="user-form h-[80%]">
             <h1 className="font-bold text-3xl text-center">Cadastre sua República</h1>
@@ -48,7 +48,7 @@ export default function FormLogin(){
                 {errors && <p className="text-red-500">{errors.number}</p>}
             </div>
             <button className="text-blue-950 text-3xl font-bold bg-white h-14 py-2 mt-4 rounded-full">Cadastrar</button>
-            <Link href="/" className="a-user-form">Entrar</Link>
+            <Link href="/login" className="a-user-form">Entrar</Link>
         </form>
     )
 }
