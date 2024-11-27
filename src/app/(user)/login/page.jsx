@@ -1,7 +1,5 @@
-import FormLogin from "@/components/FormLogin";
+import FormLogin from '@/components/FormLogin';
 
 export default function Home() {
-  return (
-    <FormLogin></FormLogin>
-  );
+  return <FormLogin></FormLogin>;
 }
