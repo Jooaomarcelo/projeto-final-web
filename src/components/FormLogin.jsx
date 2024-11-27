@@ -1,26 +1,36 @@
 'use client';
 
 import Link from "next/link";
+import toast from "react-hot-toast";
 import useLogin from '@/hooks/useLogin';
+import { loginFraternity } from "@/utils/checkCredentials";
+import { useRouter } from "next/navigation";
 
 export default function FormLogin() {
   const [userInputs, setUserInputs, errors, checkLogin] = useLogin();
+  const router = useRouter();
 
   /*
-    Description: function responsible for changing the value of userInputs.
-    */
+  Description: function responsible for changing the value of userInputs.
+  */
   const handleChange = (e) => {
     setUserInputs({ ...userInputs, [e.target.name]: e.target.value });
   };
 
   /*
-    Description: function responsible for calling the verification function and preventing the form from submitting directly.
-    */
+  Description: function responsible for calling the verification function and preventing the form from submitting directly.
+  */
   const handleSubmit = async (e) => {
     e.preventDefault();
+    /* Checking inicial inputs. */
     if (await checkLogin()) {
-      console.log(userInputs);
-      //Contact server with axios.
+      /* Trying to login. */
+      const ret = await loginFraternity(userInputs);
+      if (!ret) {
+        router.push("/home"); //Home for now.
+      } else {
+        toast.error(ret.error);
+      }
     }
   };
 

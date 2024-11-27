@@ -2,9 +2,6 @@ import readFraternities from '@/utils/getFraternities';
 
 export default async function Explore() {
   const fraternities = await readFraternities();
-
-  console.log(fraternities);
-
   return (
     // Explore Content
     <div className="flex flex-col p-8 gap-2 items-center">

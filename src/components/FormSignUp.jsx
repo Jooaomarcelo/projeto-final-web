@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import useSignUp from '@/hooks/useSignUp';
-import createFraternity from '@/utils/createFraternity';
+import { createFraternity } from '@/utils/checkCredentials';
 import { useRouter } from 'next/navigation';
 import toast from "react-hot-toast";
 
@@ -11,26 +11,28 @@ export default function FormLogin() {
   const router = useRouter();
 
   /*
-    Description: function responsible for changing the value of userInputs.
-    */
+  Description: function responsible for changing the value of userInputs.
+  */
   const handleChange = (e) => {
     setUserInputs({ ...userInputs, [e.target.name]: e.target.value });
   };
 
   /*
-    Description: function responsible for calling the verification function and preventing the form from submitting directly.
-    */
+  Description: function responsible for calling the verification function and preventing the form from submitting directly.
+  */
   const handleSubmit = async (e) => {
     e.preventDefault();
+    /* Checking inicial inputs. */
     if (await checkSignUp()) {
-      try {
-        await createFraternity(userInputs);
+      /* Trying to create new fraternity. */
+      const ret = await createFraternity(userInputs);
+      if (!ret) {
         router.push('/login');
-      } catch (error) {
-        if (error.error == 'Esse usuário já existe!') {
-          setErrors({ name: error.error });
+      } else {
+        if (ret.error == 'Esse usuário já existe!') {
+          setErrors({ name: ret.error });
         } else {
-          toast.error(error.error);
+          toast.error(ret.error);
         }
       }
     }
