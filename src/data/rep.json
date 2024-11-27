@@ -25,12 +25,12 @@
     "name": "Sbornia",
     "email": "sbornia@unifei.com",
     "password": "$2a$10$SNImwM9HofPEsXyEONI3rO07Vr/HeFjYcXjJPkvII77dTttZBLEDG",
-    "whatsapp": "35912345678",
-    "address": "",
-    "image": "",
-    "description": "",
+    "whatsapp": "35998516019",
+    "address": "Avenida BPS, 369",
+    "image": "/logo-sbornia.png",
+    "description": "Localizada próxima à universidade, é conhecida por sua atmosfera acolhedora e eventos comunitários. Ideal para estudantes que buscam um ambiente de aprendizado e lazer.",
     "members": [],
-    "capacity": 0,
+    "capacity": 11,
     "min_price": 0,
     "max_price": 0
   }
