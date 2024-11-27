@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import useLogin from '@/hooks/useLogin';
+import { loginFraternity } from "@/utils/checkCredentials";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function DropdownMenu({ ref }) {
   const [userInputs, setUserInputs, errors, checkLogin] = useLogin();
@@ -18,9 +20,15 @@ export default function DropdownMenu({ ref }) {
   */
   const handleSubmit = async (e) => {
     e.preventDefault();
+    /* Checking inicial inputs. */
     if (await checkLogin()) {
-      console.log(userInputs);
-      //Contact server with axios.
+      /* Trying to login. */
+      const ret = await loginFraternity(userInputs);
+      if (!ret) {
+        //Nothing for now.
+      } else {
+        toast.error(ret.error);
+      }
     }
   };
 
@@ -60,6 +68,7 @@ export default function DropdownMenu({ ref }) {
         </button>
         <Link href="/signup" className="text-base font-normal hover:underline">Novo aqui?</Link>
       </div>
+      <Toaster></Toaster>
     </form>
   );
 }
