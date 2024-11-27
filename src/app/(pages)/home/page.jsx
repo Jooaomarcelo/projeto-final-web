@@ -1,6 +1,4 @@
-'use client';
-
-import Link from "next/link";
+import Link from 'next/link';
 import Carrosel from '@/components/Carrosel';
 import Explore from '@/components/Explore';
 

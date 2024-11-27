@@ -1,21 +1,18 @@
+'use server';
+
 import { promises as fs } from 'fs';
 import path from 'path';
 
-const dbPath = path.join(process.cwd(), '@', 'data', 'rep.json');
-
-async function read() {
-  const data = await fs.readFileSync(dbPath);
+async function readDB() {
+  const dbPath = path.join(process.cwd(), 'src', 'data', 'rep.json');
+  const data = await fs.readFile(dbPath);
 
   return JSON.parse(data);
 }
 
-async function write(fraternity) {
-  await fs.writeFileSync(dbPath, JSON.stringify(fraternity, null, 2));
+async function writeDB(fraternity) {
+  const dbPath = path.join(process.cwd(), '@', 'data', 'rep.json');
+  await fs.writeFile(dbPath, JSON.stringify(fraternity, null, 2));
 }
 
-const connection = {
-  read,
-  write,
-};
-
-export default connection;
+export { readDB, writeDB };
