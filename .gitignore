@@ -3,3 +3,6 @@
 
 #NextJS.
 /.next
+
+#Pnpm
+pnpm-lock.yaml
