@@ -4,6 +4,7 @@ import Link from 'next/link';
 import useSignUp from '@/hooks/useSignUp';
 import createFraternity from '@/utils/createFraternity';
 import { useRouter } from 'next/navigation';
+import toast from "react-hot-toast";
 
 export default function FormLogin() {
   const [userInputs, setUserInputs, errors, setErrors, checkSignUp] = useSignUp();
@@ -29,7 +30,7 @@ export default function FormLogin() {
         if (error.error == 'Esse usuário já existe!') {
           setErrors({ name: error.error });
         } else {
-          setErrors({ unexpected: error.error });
+          toast.error(error.error);
         }
       }
     }
@@ -93,7 +94,6 @@ export default function FormLogin() {
         />
         {errors && <p className="text-red-500 ">{errors.number}</p>}
       </div>
-      {errors && <p className="text-red-500">{errors.unexpected}</p>}
       <button className="text-blue-950 text-3xl font-bold bg-white h-14 py-2 mt-4 rounded-full">Cadastrar</button>
       <Link href="/login" className="a-user-form">
         Entrar
