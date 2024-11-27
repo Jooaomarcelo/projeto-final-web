@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Poquito Más",
+    "email": "poquito@gamil.com",
+    "password": "",
+    "whatsapp": "11999999999",
+    "address": "Prefeito Tigre Maia, 1036",
+    "image": "",
+    "description": "Localizada próxima à universidade, é conhecida por sua atmosfera acolhedora e eventos comunitários. Ideal para estudantes que buscam um ambiente de aprendizado e lazer.",
+    "members": [
+      {
+        "id": 1,
+        "name": "João",
+        "nickname": "Zang",
+        "Insta": "zang"
+      }
+    ],
+    "capacity": 9,
+    "min-price": 500,
+    "max-price": 500
+  }
+]
