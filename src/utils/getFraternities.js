@@ -8,14 +8,14 @@ export default async function readFraternities() {
   let fraternitiesTreated = [];
 
   if (!session) {
-    for (let fraternitie of fraternities) {
-      const { id, email, password, members, ...rest } = fraternitie;
+    for (let fraternity of fraternities) {
+      const { id, email, password, members, ...rest } = fraternity;
 
       fraternitiesTreated.push(rest);
     }
   } else {
-    for (let fraternitie of fraternities) {
-      const { id, email, password, ...rest } = fraternitie;
+    for (let fraternity of fraternities) {
+      const { id, email, password, ...rest } = fraternity;
 
       fraternitiesTreated.push(rest);
     }

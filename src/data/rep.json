@@ -17,7 +17,21 @@
       }
     ],
     "capacity": 9,
-    "min-price": 500,
-    "max-price": 500
+    "min_price": 500,
+    "max_price": 500
+  },
+  {
+    "id": 2,
+    "name": "Sbornia",
+    "email": "sbornia@unifei.com",
+    "password": "$2a$10$SNImwM9HofPEsXyEONI3rO07Vr/HeFjYcXjJPkvII77dTttZBLEDG",
+    "whatsapp": "35912345678",
+    "address": "",
+    "image": "",
+    "description": "",
+    "members": [],
+    "capacity": 0,
+    "min_price": 0,
+    "max_price": 0
   }
 ]

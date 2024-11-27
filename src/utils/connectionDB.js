@@ -10,9 +10,9 @@ async function readDB() {
   return JSON.parse(data);
 }
 
-async function writeDB(fraternity) {
-  const dbPath = path.join(process.cwd(), '@', 'data', 'rep.json');
-  await fs.writeFile(dbPath, JSON.stringify(fraternity, null, 2));
+async function writeDB(fraternities) {
+  const dbPath = path.join(process.cwd(), 'src', 'data', 'rep.json');
+  await fs.writeFile(dbPath, JSON.stringify(fraternities, null, 2));
 }
 
 export { readDB, writeDB };
