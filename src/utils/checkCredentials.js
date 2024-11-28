@@ -1,5 +1,7 @@
-"use server";
+'use server';
 
+import { redirect } from 'next/navigation';
+import { createSessionToken } from './auth';
 import { readDB, writeDB } from './connectionDB';
 import * as bcrypt from 'bcryptjs'; //lib usada para armazenar a senha criptografada: npm i bcrypt
 
@@ -35,14 +37,14 @@ export async function createFraternity({ name, email, password, number }) {
 export async function loginFraternity({ email, password }) {
   /* Searching fraternity. */
   const fraternities = await readDB();
-  const fraternity = fraternities.find(frat => frat.email === email);
+  const fraternity = fraternities.find((frat) => frat.email === email);
   if (fraternity) {
     /* Checking password. */
     const match = await bcrypt.compare(password, fraternity.password);
     if (match) {
       //Everything OK, needs to create a session.
-      return;
+      return await createSessionToken({ sub: fraternity.id, email: fraternity.email });
     }
   }
-  return { error: "E-mail ou senha incorretos!" };
+  return { error: 'E-mail ou senha incorretos!' };
 }
