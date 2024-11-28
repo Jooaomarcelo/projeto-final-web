@@ -1,10 +1,9 @@
 import { readDB } from '@/utils/connectionDB';
-
-const session = false;
+import { isSessionValid } from './auth';
 
 export default async function readFraternities() {
+  const session = await isSessionValid();
   const fraternities = await readDB();
-
   let fraternitiesTreated = [];
 
   if (!session) {
