@@ -8,17 +8,10 @@
   --shadow-dark: 0px 6px 10px rgba(0, 0, 0, 0.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 html,
 body {
   color: var(--foreground);
-  background: var(--foreground);
+  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -38,7 +31,7 @@ h2 {
   }
 
   .user-form {
-    @apply flex flex-col justify-evenly w-auto gap-4 py-[2rem] px-14 overflow-y-auto bg-gradient-to-b from-blue-800/70 to-blue-950/90 shadow-lg rounded-[80px];
+    @apply text-white flex flex-col justify-evenly w-auto gap-4 py-[2rem] px-14 overflow-y-auto bg-gradient-to-b from-blue-800/70 to-blue-950/90 shadow-lg rounded-[80px];
   }
 
   .input-user-form {
