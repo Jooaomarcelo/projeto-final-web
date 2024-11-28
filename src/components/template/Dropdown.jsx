@@ -1,36 +1,30 @@
 'use client';
 
+import DropdownMenuUnlogged from '../DropdownMenuUnlogged';
+import DropdownMenuLogged from '../DropdownMenuLogged';
+import { useEffect, useState } from 'react';
+import { isSessionValid } from '@/utils/auth';
+
 import useDropdown from '../../hooks/useDropdown';
 import UserButton from '../UserButton';
-import DropdownMenu from '../DropdownMenuUnlogged';
-import { useEffect, useState } from 'react';
 
 export default function Dropdown() {
   const { isOpen, toggleDropdown, dropdownRef, userButtonRef } = useDropdown();
   const [session, setSession] = useState(false);
 
-  const verifySession = async () => {
+  const clientVerifySession = async () => {
     try {
-      const response = await fetch('/api/verify-session');
-      console.log(response);
+      const response = await isSessionValid();
 
-      if (!response.ok) {
-        setSession(false);
-        throw new Error('Failed to verify session');
-      }
-
-      const data = await response.json();
-
-      setSession(data);
+      setSession(response);
     } catch (error) {
-      console.log(error);
+      console.log({error: 'Erro ao validar sessão!'});
     }
   };
 
-  // Use useEffect para chamar verifySession apenas uma vez quando o componente for montado
   useEffect(() => {
-    verifySession();
-  }, []); // O array vazio [] garante que isso aconteça apenas na montagem do componente
+    clientVerifySession();
+  }, []);
 
   return (
     <div className="flex flex-col absolute right-20 w-72 items-center z-50">
@@ -41,7 +35,9 @@ export default function Dropdown() {
         }}
         ref={userButtonRef}
       />
-      {!session && isOpen && <DropdownMenu ref={dropdownRef} />}
+      {!session && isOpen && <DropdownMenuUnlogged ref={dropdownRef} />}
+
+      {session && isOpen && <DropdownMenuLogged ref={dropdownRef} />}
     </div>
   );
 }

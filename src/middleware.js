@@ -5,7 +5,7 @@ import sessionValid from './utils/sessionValid';
 //Esse "matcher" se encontra na própria documentação do next e serve para filtrar arquivos que não devem ser afetados
 export const config = {
   matcher:
-    '/((?!_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|.*\\.svg|.*\\.png|.*\\.jpg|.*\\.css|.*\\.js))',
+    '/((?!_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|.*\\.svg|.*\\.png|.*\\.jpg|.*\\.css|.*\\.js).*)',
 };
 
 const publicRoutes = ['/home', '/login', '/signup'];
@@ -20,7 +20,7 @@ export async function middleware(req) {
   }
 
   // Else, check if the session is valid
-  const session = await sessionValid();
+  const session = await isSessionValid();
   if (session) {
     return NextResponse.next();
   }

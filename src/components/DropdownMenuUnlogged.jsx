@@ -1,14 +1,10 @@
-'use client';
-
 import Link from 'next/link';
 import useLogin from '@/hooks/useLogin';
 import { loginFraternity } from '@/utils/checkCredentials';
 import toast, { Toaster } from 'react-hot-toast';
-import { useRouter } from 'next/navigation';
 
-export default function DropdownMenu({ ref }) {
+export default function DropdownMenuUnlogged({ ref }) {
   const [userInputs, setUserInputs, errors, checkLogin] = useLogin();
-  const router = useRouter();
 
   /*
   Description: function responsible for changing the value of userInputs.
@@ -64,13 +60,16 @@ export default function DropdownMenu({ ref }) {
           />
           {errors && <p className="text-red-500">{errors.password}</p>}
         </>
-        <Link href="#" className="text-base font-normal hover:underline">
+        <Link href="#" className="text-base text-white font-normal hover:underline">
           Esqueceu senha?
         </Link>
-        <button className="bg-[#0000006b] w-full rounded-full p-2 text-lg font-bold">Entrar</button>
-        <Link href="/signup" className="text-base font-normal hover:underline">
-          Novo aqui?
-        </Link>
+        <button className="bg-[#0000006b] text-white w-full rounded-full p-2 text-lg font-bold">Entrar</button>
+        <span className="text-base  text-white font-normal">
+          Novo aqui?{' '}
+          <Link href="/signup" className="text-base  text-white font-normal underline">
+            Criar conta
+          </Link>
+        </span>
       </div>
       <Toaster></Toaster>
     </form>
