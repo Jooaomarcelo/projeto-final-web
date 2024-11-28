@@ -1,6 +1,5 @@
 import { NextResponse, NextRequest } from 'next/server';
 import { isSessionValid } from './utils/auth';
-import sessionValid from './utils/sessionValid';
 
 //Esse "matcher" se encontra na própria documentação do next e serve para filtrar arquivos que não devem ser afetados
 export const config = {
