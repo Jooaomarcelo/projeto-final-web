@@ -1,17 +1,15 @@
+'use server';
+
 import * as jose from 'jose';
 //npm i jose. The liberary is used to create and verify JWT tokens
 // Also it's necessary to install npm i jsonwebtoken
 import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
 
 // in ts async function openSessionToken(token: string) instead
 async function openSessionToken(token) {
-  const uncodedSecret = process.env.TOKEN;
-
-  if (!uncodedSecret) {
-    throw new Error('TOKEN environment variable is not defined or is empty');
-  }
-
   const secret = new TextEncoder().encode(process.env.TOKEN);
+
   const { payload } = await jose.jwtVerify(token, secret);
 
   return payload;
@@ -37,6 +35,12 @@ export async function createSessionToken(payload = {}) {
     path: '/',
     httpOnly: true,
   });
+}
+
+export async function deleteSessionToken() {
+  (await cookies()).delete('session');
+
+  redirect('/login');
 }
 
 export async function isSessionValid() {

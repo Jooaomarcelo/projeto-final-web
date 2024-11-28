@@ -1,6 +1,5 @@
 'use server';
 
-import { redirect } from 'next/navigation';
 import { createSessionToken } from './auth';
 import { readDB, writeDB } from './connectionDB';
 import * as bcrypt from 'bcryptjs'; //lib usada para armazenar a senha criptografada: npm i bcrypt
