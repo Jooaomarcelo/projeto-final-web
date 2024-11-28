@@ -2,7 +2,6 @@
 
 import { createSessionToken } from './auth';
 import { readDB, writeDB } from './connectionDB';
-import { createSessionToken } from './auth';
 import * as bcrypt from 'bcryptjs';
 
 export async function createFraternity({ name, email, password, number }) {
