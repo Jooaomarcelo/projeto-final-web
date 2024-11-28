@@ -6,3 +6,6 @@
 
 #Pnpm
 pnpm-lock.yaml
+
+#env
+/.env
