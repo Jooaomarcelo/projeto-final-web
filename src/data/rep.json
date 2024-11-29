@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Poquito Más",
     "email": "poquito@gamil.com",
-    "password": "",
+    "password": "$2a$10$SNImwM9HofPEsXyEONI3rO07Vr/HeFjYcXjJPkvII77dTttZBLEDG",
     "whatsapp": "11999999999",
     "address": "Prefeito Tigre Maia, 1036",
     "image": "/logo-poquito.png",
