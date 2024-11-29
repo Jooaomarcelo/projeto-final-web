@@ -1,4 +1,5 @@
 import readFraternities from '@/utils/getFraternities';
+import Link from 'next/link';
 
 export default async function Explore() {
   const fraternities = await readFraternities();
@@ -32,10 +33,10 @@ export default async function Explore() {
               </div>
 
               {/* See More */}
-              <div>
-                <button className="bg-[#757575] w-48 h-8 rounded-3xl mt-">
-                  Saiba Mais
-                </button>
+              <div className='w-[10%] min-w-[99px]'>
+                <Link className="bg-[#757575] rounded-3xl p-[10%]" href={`/fraternities/${encodeURIComponent(item.name)}`}>
+                  Saiba mais
+                </Link>
               </div>
             </div>
           );

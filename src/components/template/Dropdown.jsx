@@ -18,7 +18,7 @@ export default function Dropdown() {
 
       setSession(response);
     } catch (error) {
-      console.log({error: 'Erro ao validar sessão!'});
+      console.log({ error: 'Erro ao validar sessão!' });
     }
   };
 
