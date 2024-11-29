@@ -41,7 +41,7 @@ export async function loginFraternity({ email, password }) {
     /* Checking password. */
     const match = await bcrypt.compare(password, fraternity.password);
     if (match) {
-      await createSessionToken({ email: email });
+      await createSessionToken({ name: fraternity.name, email: email });
       return;
     }
   }
