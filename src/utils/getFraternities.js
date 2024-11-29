@@ -1,3 +1,5 @@
+"use server";
+
 import { readDB } from '@/utils/connectionDB';
 import { isSessionValid } from './auth';
 import { redirect } from 'next/navigation';

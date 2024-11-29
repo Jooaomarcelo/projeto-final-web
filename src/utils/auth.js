@@ -4,7 +4,6 @@ import * as jose from 'jose';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
-// in ts async function openSessionToken(token: string) instead
 async function openSessionToken(token) {
   const secret = new TextEncoder().encode(process.env.TOKEN);
   const { payload } = await jose.jwtVerify(token, secret);

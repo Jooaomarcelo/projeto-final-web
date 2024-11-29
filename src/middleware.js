@@ -1,4 +1,4 @@
-import { NextResponse, NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
 import { isSessionValid } from './utils/auth';
 
 export const config = {
@@ -8,18 +8,17 @@ export const config = {
 
 const publicRoutes = ['/home', '/login', '/signup'];
 
-// in ts export async function middleware(req: NextRequest) instead
 export async function middleware(req) {
   const pathName = req.nextUrl.pathname;
-  // If the route is public, return the request
-  if (publicRoutes.includes(pathName)) {
+  // If the route is public, return the request.
+  if (publicRoutes.includes(pathName) || pathName.startsWith("/fraternities")) {
     return NextResponse.next();
   }
-  // Else, check if the session is valid
+  // Else, check if the session is valid.
   const session = await isSessionValid();
   if (session) {
     return NextResponse.next();
   }
-  // If the session is invalid, redirect to login
+  // If the session is invalid, redirect to login.
   return NextResponse.redirect(new URL('/login', req.url));
 }
