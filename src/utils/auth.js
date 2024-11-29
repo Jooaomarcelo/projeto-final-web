@@ -44,3 +44,15 @@ export async function isSessionValid() {
   const currentDate = new Date().getTime();
   return (exp * 1000) > currentDate;
 }
+
+export async function ownerToken() {
+  /* Checking cookie. */
+  const sessioncookie = (await cookies()).get('session');
+  if (!sessioncookie) {
+    return {};
+  }
+  /* Getting the name. */
+  const { value } = sessioncookie;
+  const { name } = await openSessionToken(value);
+  return name;
+}
