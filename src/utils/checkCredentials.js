@@ -47,3 +47,23 @@ export async function loginFraternity({ email, password }) {
   }
   return { error: 'E-mail ou senha incorretos!' };
 }
+
+export async function updateFraternity(payload) {
+  /* Searching fraternity. */
+  const fraternities = await readDB();
+  for (const frat of fraternities) {
+    if (frat.name === payload.name) {
+      /* Fraternity found, updating data. */
+      frat.address = payload.address;
+      frat.description = payload.description;
+      frat.capacity = Number(payload.capacity);
+      frat.min_price = Number(payload.min_price);
+      frat.max_price = Number(payload.max_price);
+      /* Writing on db. */
+      writeDB(fraternities);
+      return;
+    }
+  }
+  /* Fraternity not found, returning unexpected error. */
+  return { error: 'Um erro inesperado ocorreu!' };
+}

@@ -28,10 +28,10 @@
     "whatsapp": "35998516019",
     "address": "Avenida BPS, 369",
     "image": "/logo-sbornia.png",
-    "description": "Localizada próxima à universidade, é conhecida por sua atmosfera acolhedora e eventos comunitários. Ideal para estudantes que buscam um ambiente de aprendizado e lazer.",
+    "description": "Localizada na mesma avenida da Unifei, cerca de 15 minutos a pé e 5 de bicicleta. Além de ser um ambiente amigável, também conta com empregada e mais dois cachorros.",
     "members": [],
     "capacity": 11,
-    "min_price": 0,
-    "max_price": 0
+    "min_price": 600,
+    "max_price": 850
   }
 ]
