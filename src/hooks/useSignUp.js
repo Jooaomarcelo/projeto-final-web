@@ -34,8 +34,8 @@ export default function useSignUp() {
   const [errors, setErrors] = useState({}); //Errors messages.
 
   /*
-    Description: function responsible for checking user signup (empty fields, incorret formats, ...). 
-    */
+  Description: function responsible for checking user signup (empty fields, incorret formats, ...). 
+  */
   const checkSignUp = async () => {
     try {
       /* Checking inputs. */
