@@ -38,17 +38,19 @@ h2 {
     @apply min-h-10 h-[90%] rounded-xl text-black text-2xl placeholder-black pl-4 w-full;
   }
 
+  .input-user-update {
+    @apply min-h-10 h-[90%] rounded-xl text-black text-2xl placeholder-black pl-4 w-[70%];
+  }
+
   .a-user-form {
     @apply text-white text-lg text-center hover:underline;
   }
 
   .a-user-unlogged {
     @apply h-16 w-16 rounded-full bg-cover bg-center;
-    background-image: linear-gradient(
-        180deg,
+    background-image: linear-gradient(180deg,
         rgba(0, 0, 0, 0.1),
-        rgba(0, 0, 0, 0.7)
-      ),
+        rgba(0, 0, 0, 0.7)),
       url('/user-unlogged.svg');
   }
 }
