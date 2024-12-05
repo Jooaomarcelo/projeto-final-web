@@ -1,10 +1,10 @@
-"use server";
+'use server';
 
 import { readDB } from '@/utils/connectionDB';
 import { isSessionValid } from './auth';
 import { redirect } from 'next/navigation';
 
-export default async function readFraternities(params = null) {
+export default async function getFraternities(params = null) {
   const session = await isSessionValid();
   const fraternities = await readDB();
   if (params) {
@@ -15,11 +15,11 @@ export default async function readFraternities(params = null) {
       const { id, email, password, members, ...rest } = fraternity;
       return session ? { ...rest, members } : rest;
     } else {
-      redirect("/fraternities/Sbornia"); //Sbornia for now.
+      redirect('/fraternities/Sbornia'); //Sbornia for now.
     }
   } else {
     //All fraternities.
-    return fraternities.map(frat => {
+    return fraternities.map((frat) => {
       const { id, email, password, members, ...rest } = frat;
       return session ? { ...rest, members } : rest;
     });
