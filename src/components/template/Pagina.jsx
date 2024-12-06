@@ -5,7 +5,7 @@ export default function Pagina({ children }) {
   return (
     <div className="flex flex-col flex-1 min-h-screen">
       <Cabecalho />
-      <main className="flex flex-col flex-1 mt-16">{children}</main>
+      <main className="flex flex-col flex-1">{children}</main>
       <Rodape />
     </div>
   );

@@ -20,7 +20,7 @@ const data = [
 
 export default function Carrosel(props) {
   return (
-    <div className="relative">
+    <div className="relative h-[80%]">
       {props.children}
       <Swiper
         slidesPerView={1}
@@ -28,12 +28,13 @@ export default function Carrosel(props) {
         navigation
         autoplay={{ delay: 3000 }}
         loop
+        className="h-full"
       >
         {data.map((item) => (
           <SwiperSlide key={item.id}>
             {
               <div
-                className="w-screen relative h-[550px] xl:h-[700px]"
+                className="h-full w-screen relative"
                 style={{
                   background: `linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url(${item.img})`,
                   backgroundSize: 'cover',

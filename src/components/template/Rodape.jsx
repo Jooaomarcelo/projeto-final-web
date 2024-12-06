@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Rodape() {
   return (
@@ -26,9 +26,7 @@ export default function Rodape() {
           </Link>
         </li>
       </ul>
-      <span className="mt-2">
-        &copy; {new Date().getFullYear()} Todos os direitos reservados
-      </span>
+      <span className="mt-2">&copy; {new Date().getFullYear()} Todos os direitos reservados</span>
     </footer>
   );
 }

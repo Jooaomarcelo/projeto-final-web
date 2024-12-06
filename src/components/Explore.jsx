@@ -5,7 +5,7 @@ export default async function Explore() {
   const fraternities = await getFraternities();
   return (
     // Explore Content
-    <div id="explore" className="flex flex-col p-8 gap-2 items-center">
+    <div id="explore" className="flex flex-col py-16 gap-2 items-center">
       {fraternities.map((item, index) => {
         if (item.description) {
           // Card
