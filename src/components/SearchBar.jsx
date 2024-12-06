@@ -1,11 +1,16 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 // import { readDB } from '@/utils/connectionDB';
 import getFraternities from '@/utils/getFraternities';
+import Image from 'next/image';
+import Link from 'next/link';
+import { doc } from 'prettier';
 
 export default function SearchBar() {
   const [filteredFraternities, setfilteredFraternities] = useState([]);
+  const [isFocused, setIsFocused] = useState(false);
+  const searchBarRef = useRef(null);
 
   const handleChange = async (event) => {
     const data = await getFraternities();
@@ -23,31 +28,60 @@ export default function SearchBar() {
     setfilteredFraternities(filtered);
   };
 
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
+
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (searchBarRef.current && !searchBarRef.current.contains(event.target)) {
+        setIsFocused(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+
+    // Remover o event listener quando o componente for desmontado
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="flex flex-col items-center justify-center mx-auto relative">
+    <div ref={searchBarRef} className="flex flex-col items-center justify-center mx-auto relative">
       <div className="flex w-96 gap-4 m-3">
         <input
           onChange={handleChange}
-          onBlur={() => setfilteredFraternities([])}
+          onFocus={handleFocus}
           className="h-10 px-2 flex flex-1 bg-white text-black rounded-full"
           type="text"
           placeholder="Pesquisar"
         />
-        <button
-          className="h-10 w-10 rounded-full bg-white bg-center"
-          style={{
-            backgroundImage: 'url(search.svg)',
-            backgroundSize: '75%',
-            backgroundRepeat: 'no-repeat',
-          }}
-        ></button>
       </div>
-      {filteredFraternities.length > 0 && (
-        <div className="w-full bg-[#2b4981] p-6 absolute top-full">
-          <ul className="text-white">
+      {isFocused && filteredFraternities.length > 0 && (
+        <div className="w-full bg-[#1e355f] px-2 py-4 absolute top-full rounded-b-lg">
+          <ul className="flex flex-col gap-2">
             {filteredFraternities.map((fraternity, index) => (
-              <li key={index} className="py-1">
-                {fraternity.name}
+              <li key={index} className=" bg-[#0b15272f] text-white rounded-lg">
+                <Link
+                  href={`/fraternities/${fraternity.name}`}
+                  target="_blank"
+                  className="flex gap-2 items-center p-4 rounded-lg hover:bg-[#0b1527]"
+                >
+                  <div className="h-12 w-12">
+                    <Image
+                      src={fraternity.image || null}
+                      height={100}
+                      width={100}
+                      alt={`Logo ${fraternity.name}`}
+                      className="object-cover"
+                    />
+                  </div>
+                  <span>{fraternity.name}</span>
+                </Link>
               </li>
             ))}
           </ul>

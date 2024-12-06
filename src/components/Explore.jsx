@@ -20,13 +20,13 @@ export default async function Explore() {
               </div>
 
               {/* Content */}
-              <div className="flex w-full items-center gap-6">
+              <div className="flex w-full items-center justify-between gap-2">
                 {/* Image */}
-                <div className="w-32 items-start">
-                  <img src={item.image || null} className="object-cover rounded-full min-w-32" />
+                <div className="w-32 h-32 flex items-center justify-center">
+                  <img src={item.image || null} className="min-w-32" />
                 </div>
                 {/* Description */}
-                <div>{item.description}</div>
+                <span>{item.description}</span>
               </div>
 
               {/* See More */}
