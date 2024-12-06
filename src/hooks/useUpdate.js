@@ -8,7 +8,24 @@ Description: scheme, from yup, for checking user inputs in update.
 */
 const scheme = yup.object().shape({
     description: yup.string().required("Sua república precisa de uma descrição."),
-    address: yup.string().required("É necessário informar o endereço residencial."),
+    address: yup.object().shape({
+        cep: yup.number()
+            .nullable()
+            .transform((value, originalValue) => {
+                return originalValue === "" ? null : value;
+            })
+            .integer("Informe um cep válido.")
+            .min(1, "Informe um cep válido.")
+            .required("É necessário informar o cep."),
+        res_number: yup.number()
+            .nullable()
+            .transform((value, originalValue) => {
+                return originalValue === "" ? null : value;
+            })
+            .integer("Informe um número residencial válido.")
+            .min(1, "Informe um número residencial válido..")
+            .required("É necessário informar o número residencial.")
+    }),
     capacity: yup.number()
         .nullable()
         .transform((value, originalValue) => {
@@ -51,7 +68,13 @@ export default function useUpdate(fraternity) {
             /* Checking errors. */
             const errorMessages = {};
             e.inner.forEach((error) => {
-                errorMessages[error.path] = error.message;
+                if (error.path === "address.cep") {
+                    errorMessages["cep"] = error.message;
+                } else if (error.path === "address.res_number") {
+                    errorMessages["res_number"] = error.message;
+                } else {
+                    errorMessages[error.path] = error.message;
+                }
             });
             /* Setting errors. */
             setErrors(errorMessages);

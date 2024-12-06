@@ -35,7 +35,11 @@ function Form({ fraternity, onClose }) {
     Description: function responsible for changing the value of initialData.
     */
     const handleChange = (e) => {
-        setInitialData({ ...initialData, [e.target.name]: e.target.value });
+        if (e.target.name === "cep" || e.target.name === "res_number") {
+            setInitialData({ ...initialData, address: { ...initialData.address, [e.target.name]: e.target.value } });
+        } else {
+            setInitialData({ ...initialData, [e.target.name]: e.target.value });
+        }
     };
 
     /*
@@ -78,17 +82,31 @@ function Form({ fraternity, onClose }) {
                 </div>
                 <div>
                     <section className="flex gap-2">
-                        <label htmlFor="address" className="text-lg font-bold">Endereço: </label>
+                        <label htmlFor="cep" className="text-lg font-bold">CEP: </label>
                         <input
-                            type="text"
-                            id="address"
-                            name="address"
-                            value={initialData.address}
+                            type="number"
+                            id="cep"
+                            name="cep"
+                            value={initialData.address.cep}
                             onChange={handleChange}
                             className="flex-grow input-user-update"
                         />
                     </section>
-                    {errors && <p className="text-red-500">{errors.address}</p>}
+                    {errors && <p className="text-red-500">{errors.cep}</p>}
+                </div>
+                <div>
+                    <section className="flex gap-2">
+                        <label htmlFor="res_number" className="text-lg font-bold">Número: </label>
+                        <input
+                            type="number"
+                            id="res_number"
+                            name="res_number"
+                            value={initialData.address.res_number}
+                            onChange={handleChange}
+                            className="flex-grow input-user-update"
+                        />
+                    </section>
+                    {errors && <p className="text-red-500">{errors.res_number}</p>}
                 </div>
                 <div>
                     <section className="flex gap-2">

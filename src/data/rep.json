@@ -5,7 +5,14 @@
     "email": "poquito@gamil.com",
     "password": "$2a$10$SNImwM9HofPEsXyEONI3rO07Vr/HeFjYcXjJPkvII77dTttZBLEDG",
     "whatsapp": "11999999999",
-    "address": "Prefeito Tigre Maia, 1036",
+    "address": {
+      "cep": 37500182,
+      "state": "MG",
+      "city": "Itajubá",
+      "neighnorhood": "Pinheirinho",
+      "street": "Rua Prefeito Tigre Maia",
+      "res_number": 1036
+    },
     "image": "/logo-poquito.png",
     "description": "Localizada próxima à universidade, é conhecida por sua atmosfera acolhedora e eventos comunitários. Ideal para estudantes que buscam um ambiente de aprendizado e lazer.",
     "members": [
@@ -26,7 +33,14 @@
     "email": "sbornia@unifei.com",
     "password": "$2a$10$SNImwM9HofPEsXyEONI3rO07Vr/HeFjYcXjJPkvII77dTttZBLEDG",
     "whatsapp": "35998516019",
-    "address": "Avenida BPS, 369",
+    "address": {
+      "cep": 37500181,
+      "state": "MG",
+      "city": "Itajubá",
+      "neighnorhood": "Pinheirinho",
+      "street": "Avenida BPS",
+      "res_number": 369
+    },
     "image": "/logo-sbornia.png",
     "description": "Localizada na mesma avenida da Unifei, cerca de 15 minutos a pé e 5 de bicicleta. Além de ser um ambiente amigável, também conta com empregada e mais dois cachorros.",
     "members": [],
