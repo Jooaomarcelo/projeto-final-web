@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import useLogin from '@/hooks/useLogin';
-import { loginFraternity } from '@/utils/checkCredentials';
+import { checkLoginCredentials } from '@/utils/checkCredentials';
 import toast, { Toaster } from 'react-hot-toast';
 
 export default function DropdownMenuUnlogged({ ref }) {
@@ -21,7 +21,7 @@ export default function DropdownMenuUnlogged({ ref }) {
     /* Checking inicial inputs. */
     if (await checkLogin()) {
       /* Trying to login. */
-      const ret = await loginFraternity(userInputs);
+      const ret = await checkLoginCredentials(userInputs);
       if (!ret) {
         window.location.reload();
       } else {

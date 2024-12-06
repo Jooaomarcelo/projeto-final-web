@@ -1,8 +1,8 @@
-import getFraternities from '@/utils/getFraternities';
+import { getFraternity } from '@/utils/crudFraternities';
 import Link from 'next/link';
 
 export default async function Explore() {
-  const fraternities = await getFraternities();
+  const fraternities = await getFraternity();
   return (
     // Explore Content
     <div id="explore" className="flex flex-col py-16 gap-2 items-center">

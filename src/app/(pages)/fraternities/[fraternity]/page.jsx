@@ -1,11 +1,11 @@
 import { isSessionValid, ownerToken } from "@/utils/auth";
-import readFraternities from "@/utils/getFraternities";
+import { getFraternity } from "@/utils/crudFraternities";
 import MemberCard from "@/components/MemberCard";
 import FormUpdate from "@/components/FormUpdate";
 
 export default async function Fraternity({ params }) {
     const name = decodeURIComponent((await params).fraternity);
-    const fraternity = await readFraternities({ name });
+    const fraternity = await getFraternity({ name });
     const session = await isSessionValid(); //Permission to see the members.
     const editPermission = (await ownerToken()) === name; //Permission to edit the fraternity.
 
@@ -13,7 +13,7 @@ export default async function Fraternity({ params }) {
         <section className="flex flex-col min-h-screen gap-3">
             <div className="flex w-full h-auto max-h-[80vh] bg-[url(/unifei-campo.jpg)] bg-cover bg-no-repeat bg-[center_top_100%]">
                 <section className="flex flex-row items-end">
-                    <img src={fraternity.image} alt="" className="w-auto h-[60vh] pt-[10%]"></img>
+                    <img src={fraternity.image != "" ? fraternity.image : null} alt="" className="w-auto h-[60vh] pt-[10%]"></img>
                     <h1 className="text-7xl text-white font-bold">{fraternity.name}</h1>
                 </section>
             </div>

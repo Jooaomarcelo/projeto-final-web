@@ -1,7 +1,7 @@
 "use client";
 
 import useUpdate from "@/hooks/useUpdate";
-import { updateFraternity } from "@/utils/checkCredentials";
+import { updateFraternity } from "@/utils/crudFraternities";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 

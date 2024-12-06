@@ -3,7 +3,7 @@
 import Link from "next/link";
 import toast from "react-hot-toast";
 import useLogin from '@/hooks/useLogin';
-import { loginFraternity } from "@/utils/checkCredentials";
+import { checkLoginCredentials } from "@/utils/checkCredentials";
 import { useRouter } from "next/navigation";
 
 export default function FormLogin() {
@@ -25,7 +25,7 @@ export default function FormLogin() {
     /* Checking inicial inputs. */
     if (await checkLogin()) {
       /* Trying to login. */
-      const ret = await loginFraternity(userInputs);
+      const ret = await checkLoginCredentials(userInputs);
       if (!ret) {
         router.push("/home"); //Home for now.
       } else {

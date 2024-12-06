@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import useSignUp from '@/hooks/useSignUp';
-import { createFraternity } from '@/utils/checkCredentials';
+import { checkSignUpCredentials } from '@/utils/checkCredentials';
 import { useRouter } from 'next/navigation';
 import toast from "react-hot-toast";
 
@@ -25,7 +25,7 @@ export default function FormLogin() {
     /* Checking inicial inputs. */
     if (await checkSignUp()) {
       /* Trying to create new fraternity. */
-      const ret = await createFraternity(userInputs);
+      const ret = await checkSignUpCredentials(userInputs);
       if (!ret) {
         router.push('/login');
       } else {

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 // import { readDB } from '@/utils/connectionDB';
-import getFraternities from '@/utils/getFraternities';
+import { getFraternity } from '@/utils/crudFraternities';
 import Image from 'next/image';
 import Link from 'next/link';
 import { doc } from 'prettier';
@@ -13,7 +13,7 @@ export default function SearchBar() {
   const searchBarRef = useRef(null);
 
   const handleChange = async (event) => {
-    const data = await getFraternities();
+    const data = await getFraternity();
 
     const newTarget = event.target.value.trim();
 
