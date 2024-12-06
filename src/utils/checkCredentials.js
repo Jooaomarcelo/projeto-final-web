@@ -19,7 +19,7 @@ export async function createFraternity({ name, email, password, number }) {
       "cep": 0,
       "state": "",
       "city": "",
-      "neighnorhood": "",
+      "neighborhood": "",
       "street": "",
       "res_number": 0
     },

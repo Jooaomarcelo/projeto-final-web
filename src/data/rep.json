@@ -9,7 +9,7 @@
       "cep": 37500182,
       "state": "MG",
       "city": "Itajubá",
-      "neighnorhood": "Pinheirinho",
+      "neighborhood": "Pinheirinho",
       "street": "Rua Prefeito Tigre Maia",
       "res_number": 1036
     },
@@ -37,7 +37,7 @@
       "cep": 37500181,
       "state": "MG",
       "city": "Itajubá",
-      "neighnorhood": "Pinheirinho",
+      "neighborhood": "Pinheirinho",
       "street": "Avenida BPS",
       "res_number": 369
     },
