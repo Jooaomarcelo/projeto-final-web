@@ -23,7 +23,7 @@ const scheme = yup.object().shape({
                 return originalValue === "" ? null : value;
             })
             .integer("Informe um número residencial válido.")
-            .min(1, "Informe um número residencial válido..")
+            .min(1, "Informe um número residencial válido.")
             .required("É necessário informar o número residencial.")
     }),
     capacity: yup.number()
