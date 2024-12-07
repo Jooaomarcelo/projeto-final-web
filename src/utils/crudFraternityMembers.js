@@ -21,7 +21,7 @@ export async function createMember(payload, newMember) {
       return;
     }
   }
-  /* Fraternity not found, returning unexpected error. */
+
   return { error: 'Um erro inesperado ocorreu!' };
 }
 
@@ -39,5 +39,21 @@ export async function updateFraternityMember(member) {
       }
     }
   }
+
+  return { error: 'Um erro inesperado ocorreu!' };
+}
+
+export async function deleteFraternityMember({ id }) {
+  const fraternities = await readDB();
+
+  for (let frat of fraternities) {
+    const index = frat.members.findIndex((m) => m.id === id);
+    if (index !== -1) {
+      frat.members.splice(index, 1);
+      await writeDB(fraternities);
+      return;
+    }
+  }
+
   return { error: 'Um erro inesperado ocorreu!' };
 }
