@@ -3,7 +3,7 @@
 import DropdownMenuUnlogged from '../DropdownMenuUnlogged';
 import DropdownMenuLogged from '../DropdownMenuLogged';
 import { useEffect, useState } from 'react';
-import { isSessionValid } from '@/utils/auth';
+import { isSessionValid, ownerToken } from '@/utils/auth';
 
 import useDropdown from '../../hooks/useDropdown';
 import UserButton from '../UserButton';
@@ -11,6 +11,7 @@ import UserButton from '../UserButton';
 export default function Dropdown() {
   const { isOpen, toggleDropdown, dropdownRef, userButtonRef } = useDropdown();
   const [session, setSession] = useState(false);
+  const [fraternityName, setFraternityName] = useState('');
 
   const clientVerifySession = async () => {
     try {
@@ -22,8 +23,14 @@ export default function Dropdown() {
     }
   };
 
+  const getOwnerSession = async () => {
+    const name = await ownerToken();
+    setFraternityName(name);
+  };
+
   useEffect(() => {
     clientVerifySession();
+    getOwnerSession();
   }, []);
 
   return (
@@ -34,6 +41,8 @@ export default function Dropdown() {
           toggleDropdown();
         }}
         ref={userButtonRef}
+        // session={session}
+        name={fraternityName}
       />
       {!session && isOpen && <DropdownMenuUnlogged ref={dropdownRef} />}
 
