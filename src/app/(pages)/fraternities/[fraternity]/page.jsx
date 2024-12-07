@@ -50,9 +50,9 @@ export default async function Fraternity({ params }) {
       <div>
         {session &&
           fraternity.members.map((member) => {
-            return <MemberCard member={member}></MemberCard>;
+            return <MemberCard member={member} editPermission={editPermission}></MemberCard>;
           })}
-        {editPermission && <FormFraternityMember fraternity={fraternity} />}
+        {editPermission && <FormFraternityMember action={'create'} fraternity={fraternity} />}
       </div>
     </section>
   );

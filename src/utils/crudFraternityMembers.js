@@ -24,3 +24,20 @@ export async function createMember(payload, newMember) {
   /* Fraternity not found, returning unexpected error. */
   return { error: 'Um erro inesperado ocorreu!' };
 }
+
+export async function updateFraternityMember(member) {
+  const fraternities = await readDB();
+
+  for (const frat of fraternities) {
+    for (let fratMember of frat.members) {
+      if (fratMember.nickname === member.nickname) {
+        fratMember.name = member.name;
+        fratMember.nickname = member.nickname;
+        fratMember.Insta = member.Insta;
+        await writeDB(fraternities);
+        return;
+      }
+    }
+  }
+  return { error: 'Um erro inesperado ocorreu!' };
+}

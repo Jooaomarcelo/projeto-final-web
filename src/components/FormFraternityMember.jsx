@@ -1,11 +1,12 @@
 'use client';
 
 import useMember from '@/hooks/useMember';
-import { createMember } from '@/utils/crudFraternityMembers';
+import { createMember, updateFraternityMember } from '@/utils/crudFraternityMembers';
 import { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 
-export default function FormFraternityMember({ fraternity, member }) {
+export default function FormFraternityMember({ action, fraternity, member }) {
+  if (!member) member = { id: '', name: '', nickname: '', Insta: '' };
   const [initialData, setInitialData, errors, checkMember] = useMember(member);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -20,8 +21,12 @@ export default function FormFraternityMember({ fraternity, member }) {
     e.preventDefault();
 
     if (await checkMember()) {
-      const res = await createMember(fraternity, initialData);
-      console.log(res);
+      let res;
+      if (action === 'create') {
+        res = await createMember(fraternity, initialData);
+      } else {
+        res = await updateFraternityMember(initialData);
+      }
       if (res) {
         toast.error(res.error);
       } else {
@@ -33,9 +38,15 @@ export default function FormFraternityMember({ fraternity, member }) {
 
   return (
     <>
-      <button onClick={handleOpenForm} className="rounded-full bg-blue px-6 py-2 bg-blue-800 text-white font-bold">
-        Cadastrar Membro
-      </button>
+      {action === 'create' ? (
+        <button onClick={handleOpenForm} className="rounded-full bg-blue px-6 py-2 bg-blue-800 text-white font-bold">
+          Cadastrar Membro
+        </button>
+      ) : (
+        <button onClick={handleOpenForm} className="rounded-full bg-blue px-6 py-2 bg-blue-800 text-white font-bold">
+          Editar
+        </button>
+      )}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
           <form onSubmit={handleSubmit} className="user-form w-[40%] relative py-12">
