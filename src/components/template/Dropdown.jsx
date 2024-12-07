@@ -24,7 +24,6 @@ export default function Dropdown() {
 
   useEffect(() => {
     clientVerifySession();
-    getOwnerSession();
   }, []);
 
   return (
