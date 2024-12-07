@@ -21,11 +21,29 @@
         "name": "João Marcelo",
         "nickname": "Zang",
         "Insta": "jooaomaarceloo"
+      },
+      {
+        "id": 2,
+        "name": "Murilo",
+        "nickname": "Zidane",
+        "Insta": "gebra"
+      },
+      {
+        "id": 3,
+        "name": "Matheus",
+        "nickname": "CP",
+        "Insta": "cp"
+      },
+      {
+        "id": 4,
+        "name": "João Vitor ",
+        "nickname": "Mira",
+        "Insta": ""
       }
     ],
     "capacity": 9,
-    "min_price": 500,
-    "max_price": 500
+    "min_price": 700,
+    "max_price": 850
   },
   {
     "id": 2,
