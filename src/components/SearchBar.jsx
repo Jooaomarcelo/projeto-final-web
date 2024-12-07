@@ -22,7 +22,7 @@ export default function SearchBar() {
     if (newTarget === '') {
       filtered = [];
     } else {
-      filtered = data.filter((fraternity) => fraternity.name.toLowerCase().includes(newTarget.toLowerCase()));
+      filtered = data.filter((fraternity) => fraternity.name.toLowerCase().includes(newTarget.toLowerCase()) && fraternity.description !== "");
     }
 
     setfilteredFraternities(filtered);
@@ -73,7 +73,7 @@ export default function SearchBar() {
                 >
                   <div className="h-12 w-12">
                     <Image
-                      src={fraternity.image || null}
+                      src={fraternity.image !== "" ? fraternity.image : "/user-unlogged.svg"}
                       height={100}
                       width={100}
                       alt={`Logo ${fraternity.name}`}
