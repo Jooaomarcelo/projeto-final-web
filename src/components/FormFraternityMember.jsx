@@ -27,6 +27,7 @@ export default function FormFraternityMember({ action, fraternity, member }) {
       } else {
         res = await updateFraternityMember(initialData);
       }
+      console.log(res);
       if (res) {
         toast.error(res.error);
       } else {
