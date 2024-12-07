@@ -46,7 +46,7 @@ export default async function Fraternity({ params }) {
       </div>
       <div className="flex justify-center gap-5 mt-[3vh]">
         {editPermission && <FormUpdate fraternity={fraternity}></FormUpdate>}
-        {editPermission && <button>CONFIA</button>}
+        {editPermission && <FormDelete name={name}></FormDelete>}
       </div>
       {/* Members section */}
       <h2 className="text-center m-6 text-4xl font-bold">Membros</h2>
