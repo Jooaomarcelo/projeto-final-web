@@ -39,11 +39,17 @@ export default function FormFraternityMember({ action, fraternity, member }) {
   return (
     <>
       {action === 'create' ? (
-        <button onClick={handleOpenForm} className="rounded-full bg-blue px-6 py-2 bg-blue-800 text-white font-bold">
+        <button
+          onClick={handleOpenForm}
+          className="w-[40%] mx-auto mb-6 rounded-full bg-blue px-6 py-2 bg-blue-800 text-white font-bold"
+        >
           Cadastrar Membro
         </button>
       ) : (
-        <button onClick={handleOpenForm} className="rounded-full bg-blue px-6 py-2 bg-blue-800 text-white font-bold">
+        <button
+          onClick={handleOpenForm}
+          className="rounded-full bg-blue px-6 py-1 bg-blue-800 text-white text-sm flex-1 font-bold"
+        >
           Editar
         </button>
       )}
