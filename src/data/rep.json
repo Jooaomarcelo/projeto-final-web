@@ -17,12 +17,6 @@
     "description": "Localizada próxima à universidade, é conhecida por sua atmosfera acolhedora e eventos comunitários. Ideal para estudantes que buscam um ambiente de aprendizado e lazer.",
     "members": [
       {
-        "id": 1,
-        "name": "João Marcelo",
-        "nickname": "Zang",
-        "Insta": "jooaomaarceloo"
-      },
-      {
         "id": 2,
         "name": "Murilo",
         "nickname": "Zidane",
@@ -39,6 +33,12 @@
         "name": "João Vitor ",
         "nickname": "Mira",
         "Insta": ""
+      },
+      {
+        "id": 5,
+        "name": "João Pedro",
+        "nickname": "Johnny",
+        "Insta": "joao_pedro"
       }
     ],
     "capacity": 9,
