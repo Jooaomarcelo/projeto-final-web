@@ -11,7 +11,6 @@ import UserButton from '../UserButton';
 export default function Dropdown() {
   const { isOpen, toggleDropdown, dropdownRef, userButtonRef } = useDropdown();
   const [session, setSession] = useState(false);
-  const [fraternityName, setFraternityName] = useState('');
 
   const clientVerifySession = async () => {
     try {
@@ -21,11 +20,6 @@ export default function Dropdown() {
     } catch (error) {
       console.log({ error: 'Erro ao validar sessão!' });
     }
-  };
-
-  const getOwnerSession = async () => {
-    const name = await ownerToken();
-    setFraternityName(name);
   };
 
   useEffect(() => {
@@ -42,7 +36,7 @@ export default function Dropdown() {
         }}
         ref={userButtonRef}
         // session={session}
-        name={fraternityName}
+        // name={fraternityName}
       />
       {!session && isOpen && <DropdownMenuUnlogged ref={dropdownRef} />}
 
