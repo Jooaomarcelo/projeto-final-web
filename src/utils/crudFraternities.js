@@ -77,3 +77,24 @@ export async function createFraternity(fraternities, { name, email, password, nu
   fraternities.push(fraternity);
   await writeDB(fraternities);
 }
+
+export async function deleteFraternity(name, password) {
+  /* Searching on db. */
+  const fraternities = await readDB();
+  for (let index = 0; index < fraternities.length; index++) {
+    if (fraternities[index].name === name) {
+      /* Checking passwords. */
+      const match = await bcrypt.compare(password, fraternities[index].password);
+      if (match) {
+        /* Removing fraternity on db. */
+        fraternities.splice(index, 1);
+        await writeDB(fraternities);
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+  /* Fraternity not found, returning false. */
+  return false;
+}
