@@ -6,9 +6,9 @@ import toast, { Toaster } from 'react-hot-toast';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function MemberCard({ member, editPermission }) {
+export default function MemberCard({ name, member, editPermission }) {
   const handleDeleteButton = async () => {
-    const res = await deleteFraternityMember(member);
+    const res = await deleteFraternityMember(name, member);
     if (res) {
       toast.error(res.error);
     } else {

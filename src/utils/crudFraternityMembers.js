@@ -40,15 +40,17 @@ export async function updateFraternityMember(membro) {
   return { error: 'Um erro inesperado ocorreu!' };
 }
 
-export async function deleteFraternityMember({ id }) {
+export async function deleteFraternityMember(name, member) {
   const fraternities = await readDB();
 
   for (let frat of fraternities) {
-    const index = frat.members.findIndex((m) => m.id === id);
-    if (index !== -1) {
-      frat.members.splice(index, 1);
-      await writeDB(fraternities);
-      return;
+    if (frat.name === name) {
+      const index = frat.members.findIndex((m) => m.id === member.id);
+      if (index !== -1) {
+        frat.members.splice(index, 1);
+        await writeDB(fraternities);
+        return;
+      }
     }
   }
 

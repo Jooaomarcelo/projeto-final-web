@@ -58,7 +58,7 @@ export default async function Fraternity({ params }) {
       <div className="mb-6 container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
         {session &&
           fraternity.members.map((member) => {
-            return <MemberCard key={member.id} member={member} editPermission={editPermission}></MemberCard>;
+            return <MemberCard key={member.id} name={name} member={member} editPermission={editPermission}></MemberCard>;
           })}
       </div>
       {session && fraternity.members.length < fraternity.capacity && editPermission && (
