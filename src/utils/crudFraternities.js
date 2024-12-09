@@ -32,9 +32,13 @@ export async function updateFraternity(payload) {
   for (const frat of fraternities) {
     if (frat.name === payload.name) {
       /* Fraternity found, updating data. */
-      frat.address.cep = Number(payload.address.cep);
-      frat.address.res_number = Number(payload.address.res_number);
       frat.description = payload.description;
+      frat.address.cep = Number(payload.address.cep);
+      frat.address.state = payload.address.state;
+      frat.address.city = payload.address.city;
+      frat.address.neighborhood = payload.address.neighborhood;
+      frat.address.street = payload.address.street;
+      frat.address.res_number = Number(payload.address.res_number);
       frat.capacity = Number(payload.capacity);
       frat.min_price = Number(payload.min_price);
       frat.max_price = Number(payload.max_price);
