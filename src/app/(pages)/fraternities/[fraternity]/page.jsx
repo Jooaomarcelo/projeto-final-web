@@ -13,19 +13,19 @@ export default async function Fraternity({ params }) {
   const editPermission = (await ownerToken()) === name; //Permission to edit the fraternity.
 
   return (
-    <section className="flex flex-col gap-3">
-      <div className="flex flex-col min-h-screen w-full">
-        <div className="flex items-end w-full min-h-[45vh] sm:min-h-[55vh] h-auto bg-[url(/unifei-campo.jpg)] bg-cover bg-no-repeat bg-[center_top_100%] pt-[10%]">
-          <section className="container flex flw-wrap flex-row items-end">
-            <div className="w-[25%] sm:w-[15%]">
-              <img src={fraternity.image != '' ? fraternity.image : null} alt="" className="object-cover"></img>
+    <section className="flex flex-col gap-3 min-h-screen">
+      <div className="flex flex-col sm:h-screen w-full">
+        <div className="flex items-end w-full sm:h-[55%] bg-[url(/unifei-campo.jpg)] bg-cover bg-no-repeat bg-[center_top_100%] pt-[10%]">
+          <section className="flex w-full flex-col items-center sm:h-[80%] lg:h-full sm:flex-row sm:items-end px-5">
+            <div className="h-32 sm:h-48 lg:h-full">
+              <img src={fraternity.image != '' ? fraternity.image : null} alt="" className="h-full"></img>
             </div>
-            <h1 className="text-4xl sm:text-7xl text-white font-bold">{fraternity.name}</h1>
+            <h1 className=" w-min lg:w-max text-4xl sm:text-7xl text-white font-bold">{fraternity.name}</h1>
           </section>
         </div>
-        <div className="container mt-6 sm:mt-auto text-2xl">
+        <div className="container flex flex-1 flex-col justify-around mt-6 text-2xl">
           <p className="text-base sm:text-lg">{fraternity.description}</p>
-          <section className="flex flex-col items-center lg:flex-row flex-wrap gap-6 mt-6">
+          <section className="flex flex-col flex-wrap  items-center sm:flex-row gap-6 mt-6">
             <div className="h-16 min-w-[20%] px-[2%] py-[1%] flex justify-between items-center bg-gray-400 rounded-full">
               <Image src="/wallet.svg" height={48} width={48} alt="Preço" />
               <span className="text-base ext-center">
@@ -58,7 +58,9 @@ export default async function Fraternity({ params }) {
       <div className="mb-6 container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
         {session &&
           fraternity.members.map((member) => {
-            return <MemberCard key={member.id} name={name} member={member} editPermission={editPermission}></MemberCard>;
+            return (
+              <MemberCard key={member.id} name={name} member={member} editPermission={editPermission}></MemberCard>
+            );
           })}
       </div>
       {session && fraternity.members.length < fraternity.capacity && editPermission && (
