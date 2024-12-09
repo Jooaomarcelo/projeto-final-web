@@ -41,7 +41,7 @@ export default async function Fraternity({ params }) {
             <div className="h-16 min-w-[20%] px-[2%] py-[1%] flex justify-between items-center bg-gray-400 rounded-full">
               <Image src="/icons/wallet.svg" height={48} width={48} alt="Preço" />
               <span className="text-base ext-center">
-                {fraternity.min_price} - {fraternity.max_price}
+                R$ {fraternity.min_price} - {fraternity.max_price}
               </span>
             </div>
             <div className="h-16 px-[2%] py-[1%] flex min-w-[35%] justify-between items-center bg-gray-400 rounded-full">
@@ -66,7 +66,7 @@ export default async function Fraternity({ params }) {
         </div>
       </div>
       {/* Members section */}
-      {session && <h2 className="text-center m-6 text-4xl font-bold">Membros</h2>}
+      {session && fraternity.members.length > 0 && <h2 className="text-center m-6 text-4xl font-bold">Membros</h2>}
       <div className="mb-6 container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
         {session &&
           fraternity.members.map((member) => {

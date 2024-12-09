@@ -52,11 +52,11 @@ export default function MemberCard({ name, member, seed, editPermission }) {
         alt="Avatar do membro"
       ></Image>
       <section className="min-w-[90%] m-4 flex flex-col gap-2">
-        <div className="bg-white w-full rounded-full py-1 px-4">
-          <span className="text-sm">Nome: {member.name}</span>
+        <div className="flex justify-center bg-white w-full rounded-full py-1 px-4">
+          <span className="text-sm">{member.name}</span>
         </div>
-        <div className="bg-white w-full rounded-full py-2 px-4">
-          <span className="text-sm">Apelido: {member.nickname}</span>
+        <div className="flex justify-center bg-white w-full rounded-full py-2 px-4">
+          <span className="text-sm">{member.nickname}</span>
         </div>
         <Link href={`https://instagram.com/${member.Insta}`} target="_blank" className="mx-auto">
           <img src="/icons/instagram.svg" alt="" />

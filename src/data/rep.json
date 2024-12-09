@@ -75,7 +75,7 @@
     "name": "JACA",
     "email": "repjaca@gmail.com",
     "password": "$2a$10$0tV5l0bd1stwzaVSnxAXg.Qdj7JviQ8852h8egVm0mIFnXaRPe44y",
-    "whatsapp": "19999506333",
+    "whatsapp": "99999999999",
     "address": {
       "state": "MG",
       "city": "Itajubá",
@@ -88,10 +88,10 @@
     "members": [
       {
         "id": 1,
-        "name": "Diego",
-        "nickname": "m&m",
-        "seed": "m&m",
-        "Insta": "luiiis_mm"
+        "name": "Haroldo",
+        "nickname": "fedido",
+        "seed": "fedido",
+        "Insta": "cachorro_fedido"
       },
       {
         "id": 2,
