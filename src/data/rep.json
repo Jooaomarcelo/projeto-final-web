@@ -65,26 +65,5 @@
     "capacity": 11,
     "min_price": 600,
     "max_price": 850
-  },
-  {
-    "id": 3,
-    "name": "ConfiaNoSucesso",
-    "email": "confia@gmail.com",
-    "password": "$2a$10$QrmK90vzT7hg.h0O/qVLqOIYyRN8CD9Cu6HPLyPk5rQ8pRHenDtDa",
-    "whatsapp": "12345678900",
-    "address": {
-      "cep": 0,
-      "state": "",
-      "city": "",
-      "neighborhood": "",
-      "street": "",
-      "res_number": 0
-    },
-    "image": "",
-    "description": "",
-    "members": [],
-    "capacity": 0,
-    "min_price": 0,
-    "max_price": 0
   }
 ]
