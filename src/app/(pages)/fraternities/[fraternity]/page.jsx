@@ -15,7 +15,7 @@ export default async function Fraternity({ params }) {
   return (
     <section className="flex flex-col gap-3 min-h-screen">
       <div className="flex flex-col sm:h-screen w-full">
-        <div className="flex items-end w-full sm:h-[55%] bg-[url(/unifei/unifei-campo.jpg)] bg-cover bg-no-repeat bg-[center_top_100%] pt-[10%]">
+        <div className="flex items-end w-full sm:h-[55%] bg-[url(/unifei-campo.jpg)] bg-cover bg-no-repeat bg-[center_top_100%] pt-[10%]">
           <section className="flex w-full flex-col items-center sm:h-[80%] lg:h-full sm:flex-row sm:items-end px-5">
             <div className="h-32 sm:h-48 lg:h-full">
               <img src={fraternity.image != '' ? fraternity.image : null} alt="" className="h-full"></img>

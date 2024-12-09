@@ -2,6 +2,7 @@
 
 import { readDB, writeDB } from '@/utils/connectionDB';
 import { isSessionValid } from './auth';
+import { redirect } from 'next/navigation';
 import * as bcrypt from 'bcryptjs';
 
 export async function getFraternity(params = null) {
@@ -15,7 +16,7 @@ export async function getFraternity(params = null) {
       const { id, email, password, members, ...rest } = fraternity;
       return session ? { ...rest, members } : rest;
     } else {
-      return {};
+      redirect('/fraternities/Sbornia'); //Sbornia for now.
     }
   } else {
     //All fraternities.
