@@ -106,6 +106,7 @@ export async function createFraternity(fraternities, { name, email, password, nu
     capacity: 0,
     min_price: 0,
     max_price: 0,
+    admin: false
   };
   /* Writing on db. */
   fraternities.push(fraternity);

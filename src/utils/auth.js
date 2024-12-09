@@ -56,3 +56,15 @@ export async function ownerToken() {
   const { name } = await openSessionToken(value);
   return name;
 }
+
+export async function isAdmin() {
+  /* Checking cookie. */
+  const sessioncookie = (await cookies()).get('session');
+  if (!sessioncookie) {
+    return {};
+  }
+  /* Getting the name. */
+  const { value } = sessioncookie;
+  const { admin } = await openSessionToken(value);
+  return admin;
+}

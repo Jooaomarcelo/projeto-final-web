@@ -25,7 +25,7 @@ export async function checkLoginCredentials({ email, password }) {
     /* Checking password. */
     const match = await bcrypt.compare(password, fraternity.password);
     if (match) {
-      await createSessionToken({ name: fraternity.name, email: email });
+      await createSessionToken({ name: fraternity.name, email: email, admin: fraternity.admin });
       return;
     }
   }

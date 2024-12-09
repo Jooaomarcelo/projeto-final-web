@@ -46,7 +46,8 @@
     ],
     "capacity": 9,
     "min_price": 700,
-    "max_price": 850
+    "max_price": 850,
+    "admin": true
   },
   {
     "id": 2,
@@ -66,7 +67,8 @@
     "members": [],
     "capacity": 11,
     "min_price": 600,
-    "max_price": 850
+    "max_price": 850,
+    "admin": true
   },
   {
     "id": 3,
@@ -101,6 +103,7 @@
     ],
     "capacity": 10,
     "min_price": 800,
-    "max_price": 1200
+    "max_price": 1200,
+    "admin": true
   }
 ]

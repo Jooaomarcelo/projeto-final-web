@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { isSessionValid } from './utils/auth';
+import { isAdmin, isSessionValid } from './utils/auth';
 
 export const config = {
   matcher:
@@ -14,11 +14,12 @@ export async function middleware(req) {
   if (publicRoutes.includes(pathName) || pathName.startsWith("/fraternities")) {
     return NextResponse.next();
   }
-  // Else, check if the session is valid.
+  // Else, check if the session is valid and admin.
   const session = await isSessionValid();
-  if (session) {
+  const admin = await isAdmin();
+  if (session && admin) {
     return NextResponse.next();
   }
-  // If the session is invalid, redirect to login.
+  // If the session is invalid or the user is not an admin, redirect to login.
   return NextResponse.redirect(new URL('/login', req.url));
 }
