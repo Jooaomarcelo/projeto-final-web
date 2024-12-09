@@ -6,7 +6,6 @@
     "password": "$2a$10$SNImwM9HofPEsXyEONI3rO07Vr/HeFjYcXjJPkvII77dTttZBLEDG",
     "whatsapp": "11999999999",
     "address": {
-      "cep": 37500182,
       "state": "MG",
       "city": "Itajubá",
       "neighborhood": "Pinheirinho",
@@ -56,7 +55,6 @@
     "password": "$2a$10$SNImwM9HofPEsXyEONI3rO07Vr/HeFjYcXjJPkvII77dTttZBLEDG",
     "whatsapp": "35998516019",
     "address": {
-      "cep": 37500181,
       "state": "MG",
       "city": "Itajubá",
       "neighborhood": "Pinheirinho",
@@ -77,7 +75,6 @@
     "password": "$2a$10$0tV5l0bd1stwzaVSnxAXg.Qdj7JviQ8852h8egVm0mIFnXaRPe44y",
     "whatsapp": "19999506333",
     "address": {
-      "cep": 37500356,
       "state": "",
       "city": "",
       "neighborhood": "",
