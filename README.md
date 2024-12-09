@@ -37,12 +37,12 @@ As funcionalidades oferecidas pelo projeto são:
         /utils          #Aquirvos úteis, como CRUDs e verificação de credenciais.
 
 ## Tecnologias utilizadas
-- **Next.js**
-- **Tailwind.css**
-- **Yup**
+- **Next.js**: Framework React que oferece renderização no servidor e geração de páginas estáticas.
+- **Tailwind.css**: Framework CSS que facilita o design responsivo e estilização rápida.
+- **Yup**: Para validação de formulários.
 - **Toast**
 - **Bcryptjs**
-- **Jose**
+- **Jose**: Biblioteca de autenticação de usuário.
 
 ## APIs utilizadas
 - [Brasil API](https://brasilapi.com.br)
@@ -57,7 +57,7 @@ Instale as dependências:
 ```bash
 npm i --force
 ```
-O `--force` se deve a versão atual do `Toast`.
+O `--force` se deve a versão atual do `Toast` e  `Axios`.
 
 Inicialize o servidor:
 ```bash
