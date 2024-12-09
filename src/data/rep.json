@@ -13,7 +13,7 @@
       "street": "Rua Prefeito Tigre Maia",
       "res_number": 1036
     },
-    "image": "/logo-poquito.png",
+    "image": "/fraternities/logo-poquito.png",
     "description": "Localizada próxima à universidade, é conhecida por sua atmosfera acolhedora e eventos comunitários. Ideal para estudantes que buscam um ambiente de aprendizado e lazer.",
     "members": [
       {
@@ -59,11 +59,32 @@
       "street": "Avenida BPS",
       "res_number": 369
     },
-    "image": "/logo-sbornia.png",
+    "image": "/fraternities/logo-sbornia.png",
     "description": "Localizada na mesma avenida da Unifei, cerca de 15 minutos a pé e 5 de bicicleta. Além de ser um ambiente amigável, também conta com empregada e mais dois cachorros.",
     "members": [],
     "capacity": 11,
     "min_price": 600,
     "max_price": 850
+  },
+  {
+    "id": 3,
+    "name": "ConfiaNoSucesso",
+    "email": "confia@gmail.com",
+    "password": "$2a$10$QrmK90vzT7hg.h0O/qVLqOIYyRN8CD9Cu6HPLyPk5rQ8pRHenDtDa",
+    "whatsapp": "12345678900",
+    "address": {
+      "cep": 0,
+      "state": "",
+      "city": "",
+      "neighborhood": "",
+      "street": "",
+      "res_number": 0
+    },
+    "image": "",
+    "description": "",
+    "members": [],
+    "capacity": 0,
+    "min_price": 0,
+    "max_price": 0
   }
 ]

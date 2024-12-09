@@ -6,7 +6,7 @@ export default function UserPage({ children }) {
   const router = useRouter();
 
   return (
-    <section className="flex justify-around bg-[url(/unifei.jpg)] bg-cover bg-center h-screen">
+    <section className="flex justify-around bg-[url(/unifei/unifei.jpg)] bg-cover bg-center h-screen">
       <div className="absolute inset-0 bg-gradient-to-l from-black/50 to-transparent"></div>
       <div className="relative z-10 h-screen flex items-center">
         <button

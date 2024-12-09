@@ -15,7 +15,7 @@ export default async function Fraternity({ params }) {
   return (
     <section className="flex flex-col gap-3">
       <div className="flex flex-col min-h-screen w-full">
-        <div className="flex items-end w-full min-h-[45vh] sm:min-h-[55vh] h-auto bg-[url(/unifei-campo.jpg)] bg-cover bg-no-repeat bg-[center_top_100%] pt-[10%]">
+        <div className="flex items-end w-full min-h-[45vh] sm:min-h-[55vh] h-auto bg-[url(/unifei/unifei-campo.jpg)] bg-cover bg-no-repeat bg-[center_top_100%] pt-[10%]">
           <section className="container flex flw-wrap flex-row items-end">
             <div className="w-[25%] sm:w-[15%]">
               <img src={fraternity.image != '' ? fraternity.image : null} alt="" className="object-cover"></img>
@@ -27,23 +27,23 @@ export default async function Fraternity({ params }) {
           <p className="text-base sm:text-lg">{fraternity.description}</p>
           <section className="flex flex-col items-center lg:flex-row flex-wrap gap-6 mt-6">
             <div className="h-16 min-w-[20%] px-[2%] py-[1%] flex justify-between items-center bg-gray-400 rounded-full">
-              <Image src="/wallet.svg" height={48} width={48} alt="Preço" />
+              <Image src="/icons/wallet.svg" height={48} width={48} alt="Preço" />
               <span className="text-base ext-center">
                 {fraternity.min_price} - {fraternity.max_price}
               </span>
             </div>
             <div className="h-16 px-[2%] py-[1%] flex min-w-[35%] justify-between items-center bg-gray-400 rounded-full">
-              <Image src="/local.svg" height={48} width={48} alt="Preço" />
+              <Image src="/icons/local.svg" height={48} width={48} alt="Preço" />
               <span className="text-base text-center">
                 {fraternity.address.street}, {fraternity.address.res_number} - {fraternity.address.neighborhood}
               </span>
             </div>
             <div className="h-16 min-w-[20%] px-[2%] py-[1%] flex justify-between items-center bg-gray-400 rounded-full">
-              <Image src="/msg.svg" height={48} width={48} alt="Preço" />
+              <Image src="/icons/msg.svg" height={48} width={48} alt="Preço" />
               <span className="text-base text-center">{fraternity.whatsapp}</span>
             </div>
             <div className="h-16 min-w-[15%] px-[2%] py-[1%] flex justify-between items-center bg-gray-400 rounded-full">
-              <Image src="/members.svg" height={48} width={48} alt="Preço" />
+              <Image src="/icons/members.svg" height={48} width={48} alt="Preço" />
               <span className="text-base">{fraternity.capacity}</span>
             </div>
           </section>

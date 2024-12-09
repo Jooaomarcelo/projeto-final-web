@@ -13,9 +13,9 @@ import { register } from 'swiper/element/bundle';
 register();
 
 const data = [
-  { id: 1, img: '/unifei-campus.jpg' },
-  { id: 2, img: '/unifei.jpg' },
-  { id: 3, img: '/parque-itajuba.jpg', position: '0 40%' },
+  { id: 1, img: '/unifei/unifei-campus.jpg' },
+  { id: 2, img: '/unifei/unifei.jpg' },
+  { id: 3, img: '/unifei/parque-itajuba.jpg', position: '0 40%' },
 ];
 
 export default function Carrosel(props) {
