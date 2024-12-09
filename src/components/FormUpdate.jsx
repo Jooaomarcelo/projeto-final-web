@@ -11,7 +11,7 @@ export default function FormUpdate({ fraternity }) {
 	const [isOpen, setIsOpen] = useState(false);
 
 	/*
-	Description: functions responsibles for changing de visibility of the update form.
+	Description: functions responsibles for changing the visibility of the update form.
 	*/
 	const handleOpenForm = () => setIsOpen(true);
 	const handleCloseForm = () => window.location.reload();
@@ -54,11 +54,9 @@ function Form({ fraternity, onClose }) {
 	/*
 	Description: function responsible for changing the value of initialData.
 	*/
-
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 
-		// Se o campo estiver dentro de 'address', trata especificamente, caso contrário, trata diretamente.
 		if (name in initialData.address) {
 			setInitialData(prevData => ({
 				...prevData,
@@ -70,26 +68,15 @@ function Form({ fraternity, onClose }) {
 		} else {
 			setInitialData(prevData => ({
 				...prevData,
-				[name]: value // Para os outros campos que não estão em 'address'
+				[name]: value
 			}));
 		}
 	};
 
 
-
-
-	// const handleChange = (e) => {
-	// 	if (e.target.name === "cep" || e.target.name === "res_number") {
-	// 		setInitialData({ ...initialData, address: { ...initialData.address, [e.target.name]: e.target.value } });
-	// 	} else {
-	// 		setInitialData({ ...initialData, [e.target.name]: e.target.value });
-	// 	}
-	// };
-
 	const handleChangeCep = async (e) => {
 		const cep = e.target.value;
 
-		// Verifica se o CEP tem exatamente 8 dígitos
 		if (cep.length === 8) {
 			try {
 				await fetchCepData(cep);
@@ -98,7 +85,7 @@ function Form({ fraternity, onClose }) {
 						...prevData,
 						address: {
 							...prevData.address,
-							city: data.city, // Apenas preenche se estiver vazio
+							city: data.city,
 							state: data.state,
 							neighborhood: data.neighborhood,
 							street: data.street,
@@ -112,18 +99,6 @@ function Form({ fraternity, onClose }) {
 			}
 		}
 	};
-
-	// const handleChangeCep = async (e) => {
-	// 	if (e.target.value.length === 8) {
-	// 		await fetchCepData(e.target.value);
-	// 		if (error) {
-	// 			toast.error(error);
-	// 		} else if (data) {
-	// 			console.log(data);
-	// 			setInitialData(prevData => ({ ...prevData, address: { ...prevData.address, city: data.city, state: data.state, neighborhood: data.neighborhood, street: data.street } }));
-	// 		}
-	// 	}
-	// }
 
 	/*
 	Description: function responsible for calling the verification function and preventing the form from submitting directly.
@@ -142,6 +117,9 @@ function Form({ fraternity, onClose }) {
 		}
 	}
 
+	/*
+	Description: responsible for rendering the form with functions calls.
+	*/
 	return (
 		<>
 			<div className="relative">
@@ -167,6 +145,9 @@ function Form({ fraternity, onClose }) {
 	)
 }
 
+/*
+Description: function responsible for avoid code repetition and create input fields.
+*/
 function InputField({ label, name, value, onChange, error, onBlur }) {
 	return (
 		<div>

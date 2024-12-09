@@ -1,6 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
 
+/*
+Description: custom hook responsible for fetching data from the API.
+*/
 export default function useCep() {
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);
