@@ -75,10 +75,10 @@
     "password": "$2a$10$0tV5l0bd1stwzaVSnxAXg.Qdj7JviQ8852h8egVm0mIFnXaRPe44y",
     "whatsapp": "19999506333",
     "address": {
-      "state": "",
-      "city": "",
-      "neighborhood": "",
-      "street": "",
+      "state": "MG",
+      "city": "Itajubá",
+      "neighborhood": "Pinheirinho",
+      "street": "Rua Antônio Simão Mauad",
       "res_number": 716
     },
     "image": "/fraternities/logo-jaca.png",
