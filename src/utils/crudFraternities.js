@@ -32,7 +32,6 @@ export async function updateFraternity(payload) {
   for (const frat of fraternities) {
     if (frat.name === payload.name) {
       /* Fraternity found, updating data. */
-      frat.address.cep = Number(payload.address.cep);
       frat.address.res_number = Number(payload.address.res_number);
       frat.description = payload.description;
       frat.capacity = Number(payload.capacity);
@@ -58,7 +57,6 @@ export async function createFraternity(fraternities, { name, email, password, nu
     password: hashPassword,
     whatsapp: number,
     address: {
-      "cep": 0,
       "state": "",
       "city": "",
       "neighborhood": "",

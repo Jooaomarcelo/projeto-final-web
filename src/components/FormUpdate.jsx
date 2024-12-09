@@ -23,7 +23,7 @@ export default function FormUpdate({ fraternity }) {
 			</button>
 			{isOpen && (
 				<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-					<div className="user-form max-w-lg w-full">
+					<div className="user-form max-h-screen max-w-lg w-full">
 						<Form fraternity={fraternity} onClose={handleCloseForm}></Form>
 					</div>
 				</div>
@@ -76,7 +76,6 @@ function Form({ fraternity, onClose }) {
 
 	const handleChangeCep = async (e) => {
 		const cep = e.target.value;
-
 		if (cep.length === 8) {
 			try {
 				await fetchCepData(cep);
@@ -128,7 +127,7 @@ function Form({ fraternity, onClose }) {
 			<form onSubmit={handleSubmit} className="flex flex-col gap-3">
 				<h1 className="text-2xl text-center font-bold">Editar {initialData.name}</h1>
 				<InputField label="Descrição" name="description" value={initialData.description || ''} onChange={handleChange} error={errors?.description} />
-				<InputField label="CEP" name="cep" value={initialData.address.cep} onChange={handleChange} onBlur={handleChangeCep} error={errors?.cep} />
+				<InputField label="CEP" name="cep" placeholder={"Autopreencher campos"} onBlur={handleChangeCep} error={errors?.cep} />
 				<InputField label="Estado" name="state" value={initialData.address.state || ''} onChange={handleChange} error={errors?.state} />
 				<InputField label="Cidade" name="city" value={initialData.address.city || ''} onChange={handleChange} error={errors?.city} />
 				<InputField label="Bairro" name="neighborhood" value={initialData.address.neighborhood || ''} onChange={handleChange} error={errors?.neighborhood} />
@@ -147,7 +146,7 @@ function Form({ fraternity, onClose }) {
 /*
 Description: function responsible for avoid code repetition and create input fields.
 */
-function InputField({ label, name, value, onChange, error, onBlur }) {
+function InputField({ label, name, value, placeholder, onChange, error, onBlur }) {
 	return (
 		<div>
 			<section className="flex gap-2 items-center">
@@ -156,7 +155,8 @@ function InputField({ label, name, value, onChange, error, onBlur }) {
 					type={name === "res_number" || name === "min_price" || name === "max_price" ? "number" : "text"}
 					id={name}
 					name={name}
-					value={value}
+					value={value ?? undefined}
+					placeholder={placeholder ?? null}
 					onChange={onChange ?? null}
 					onBlur={onBlur ?? null}
 					className="flex-grow input-user-update"
