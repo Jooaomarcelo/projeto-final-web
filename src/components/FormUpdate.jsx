@@ -3,7 +3,7 @@
 import useUpdate from "@/hooks/useUpdate";
 import { updateFraternity } from "@/utils/crudFraternities";
 import { useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import useCep from "@/hooks/useCep";
 import { useEffect } from "react";
 
@@ -140,7 +140,6 @@ function Form({ fraternity, onClose }) {
 
 				<button className="text-blue-950 text-3xl font-bold bg-white h-14 py-2 rounded-full">Salvar</button>
 			</form>
-			<Toaster></Toaster>
 		</>
 	)
 }

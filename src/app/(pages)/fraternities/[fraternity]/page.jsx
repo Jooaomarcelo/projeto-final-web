@@ -1,5 +1,6 @@
 import { isSessionValid, ownerToken } from '@/utils/auth';
 import { getFraternity } from '@/utils/crudFraternities';
+import { Toaster } from 'react-hot-toast';
 import MemberCard from '@/components/MemberCard';
 import FormUpdate from '@/components/FormUpdate';
 import FormFraternityMember from '@/components/FormFraternityMember';
@@ -66,6 +67,7 @@ export default async function Fraternity({ params }) {
       {session && fraternity.members.length < fraternity.capacity && editPermission && (
         <FormFraternityMember action={'create'} fraternity={fraternity} />
       )}
+      <Toaster></Toaster>
     </section>
   );
 }

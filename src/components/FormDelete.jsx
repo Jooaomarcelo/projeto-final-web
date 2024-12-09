@@ -3,7 +3,7 @@
 import { deleteSessionToken } from '@/utils/auth';
 import { deleteFraternity } from '@/utils/crudFraternities';
 import { useState } from 'react';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 export default function FormDelete({ name }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,7 +57,6 @@ export default function FormDelete({ name }) {
               </div>
               <button className="text-blue-950 text-3xl font-bold bg-white h-14 py-2 rounded-full">Excluir</button>
             </form>
-            <Toaster></Toaster>
           </div>
         </div>
       )}

@@ -2,7 +2,7 @@
 
 import FormFraternityMember from './FormFraternityMember';
 import { deleteFraternityMember, newMemberAvatar } from '../utils/crudFraternityMembers';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -56,7 +56,6 @@ export default function MemberCard({ name, member, editPermission }) {
           </button>
         </div>
       )}
-      <Toaster></Toaster>
     </div>
   );
 }
