@@ -1,26 +1,27 @@
 'use client';
 
 import FormFraternityMember from './FormFraternityMember';
-import useAvatar from '@/hooks/useAvatar'
+import useAvatar from '@/hooks/useAvatar';
 import { deleteFraternityMember, newMemberAvatar } from '@/utils/crudFraternityMembers';
 import toast, { Toaster } from 'react-hot-toast';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { randomBytes } from 'crypto';
 
 export default function MemberCard({ name, member, seed, editPermission }) {
-  const [ svg, setSvg ] = useState(null);
+  const [svg, setSvg] = useState(null);
 
   const fetchAvatar = async () => {
     const data = await useAvatar(member.seed);
     setSvg(data);
-  }
+  };
 
   useEffect(() => {
     if (member.seed) {
       fetchAvatar(member.seed);
     }
-  }, [member.seed]);
+  }, []);
 
   const handleDeleteButton = async () => {
     const res = await deleteFraternityMember(name, member);
@@ -32,20 +33,24 @@ export default function MemberCard({ name, member, seed, editPermission }) {
     }
   };
   const handleNewAvatar = async () => {
-    const res = await newMemberAvatar(name, member);
+    const uniqueSeed = randomBytes(16).toString('hex');
+    const res = await newMemberAvatar(name, member, uniqueSeed);
     if (res) {
       toast.error(res.error);
     } else {
-      const data = await useAvatar(member.seed);   
-      setSvg[data];
-      window.location.reload();
+      const data = await useAvatar(uniqueSeed);
+      setSvg(data);
       toast.success('Avatar alterado com sucesso!', { duration: 5000 });
     }
   };
-  console.log(svg);
   return (
     <div className="w-[80%] mx-auto flex flex-col items-center py-4 rounded-3xl bg-[#D9D9D9]">
-      <Image src={`data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`} height={100} width={100} alt="Avatar do membro"></Image>
+      <Image
+        src={`data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`}
+        height={100}
+        width={100}
+        alt="Avatar do membro"
+      ></Image>
       <section className="min-w-[90%] m-4 flex flex-col gap-2">
         <div className="bg-white w-full rounded-full py-1 px-4">
           <span className="text-sm">Nome: {member.name}</span>
