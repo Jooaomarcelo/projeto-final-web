@@ -1,7 +1,6 @@
 import Dropdown from './Dropdown';
 import SearchBar from '../SearchBar';
 import HomeButton from '../HomeButton';
-import Image from 'next/image';
 
 export default function Cabecalho() {
   return (

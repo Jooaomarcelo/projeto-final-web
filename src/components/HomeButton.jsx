@@ -12,6 +12,7 @@ export default function HomeButton() {
         src={"/icons/home.svg"}
         height={48}
         width={48}
+        className='hover:cursor-pointer'
       />
     </div>
   );
