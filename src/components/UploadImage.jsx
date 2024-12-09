@@ -18,13 +18,27 @@ export default function UploadImage({ name }) {
     window.location.reload();
   };
 
-  const handleChange = async (e) => {
+  const handleChange = (e) => {
     if (!e.target.files) {
       return;
     }
     const [file] = e.target.files;
     const { name } = file;
     setFileName(name);
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const [file] = e.dataTransfer.files;
+    const { name } = file;
+    setFileName(name);
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'copy';
+    e.stopPropagation();
   };
 
   const handleAction = async (formData) => {
@@ -52,14 +66,18 @@ export default function UploadImage({ name }) {
             >
               X
             </button>
-            <label className="w-full h-48 flex flex-col justify-center items-center my-2 border-dashed border-2 text-[#fff] cursor-pointer">
+            <label
+              className="w-full h-48 flex flex-col justify-center items-center my-2 border-dashed border-2 text-[#fff] cursor-pointer"
+              onDrop={handleDrop}
+              onDragOver={handleDragOver}
+            >
               <span>
                 <img src="/icons/upload.svg" alt="Coloque a logo de sua República aqui" />
               </span>
-              <p>Arraste e solte sua logo aqui ou clique para selecionar um arquivo</p>
+              <p className="text-center">Arraste e solte sua logo aqui ou clique para selecionar um arquivo</p>
               <input onChange={handleChange} type="file" name="file" className="max-w-full hidden" />
             </label>
-            {fileName !== '' && <p>{fileName} selecionado</p>}
+            {fileName !== '' && <p className="text-center flex-1 break-all">{fileName} selecionado</p>}
             <button className="text-blue-950 text-xl font-bold bg-white px-4 py-2 rounded-full">Enviar</button>
           </form>
         </div>
