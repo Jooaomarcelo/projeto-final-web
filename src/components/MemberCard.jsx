@@ -41,7 +41,7 @@ export default function MemberCard({ name, member, editPermission }) {
       </section>
       {editPermission && (
         <div className="flex flex-wrap ml gap-2">
-          <FormFraternityMember action={'edit'} member={member} />
+          <FormFraternityMember action={'edit'} name={name} member={member} />
           <button
             onClick={handleNewAvatar}
             className="rounded-full flex-1 bg-blue px-6 py-1 bg-blue-800 text-white text-sm font-bold"

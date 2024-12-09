@@ -27,15 +27,17 @@ export async function createMember(payload, newMember) {
   return { error: 'Um erro inesperado ocorreu!' };
 }
 
-export async function updateFraternityMember(membro) {
+export async function updateFraternityMember(name, membro) {
   const fraternities = await readDB();
 
   for (let frat of fraternities) {
-    const index = frat.members.findIndex((m) => m.id === membro.id);
-    if (index !== -1) {
-      frat.members[index] = { ...membro };
-      await writeDB(fraternities);
-      return;
+    if (frat.name === name) {
+      const index = frat.members.findIndex((m) => m.id === membro.id);
+      if (index !== -1) {
+        frat.members[index] = { ...membro };
+        await writeDB(fraternities);
+        return;
+      }
     }
   }
 

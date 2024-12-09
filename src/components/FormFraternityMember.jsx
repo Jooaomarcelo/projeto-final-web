@@ -5,7 +5,7 @@ import { createMember, updateFraternityMember } from '@/utils/crudFraternityMemb
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 
-export default function FormFraternityMember({ action, fraternity, member }) {
+export default function FormFraternityMember({ action, fraternity, name, member }) {
   if (!member) member = { id: '', name: '', nickname: '', seed: '', Insta: '' };
   const [initialData, setInitialData, errors, checkMember] = useMember(member);
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +25,7 @@ export default function FormFraternityMember({ action, fraternity, member }) {
       if (action === 'create') {
         res = await createMember(fraternity, initialData);
       } else {
-        res = await updateFraternityMember(initialData);
+        res = await updateFraternityMember(name, initialData);
       }
       if (res) {
         toast.error(res.error);
