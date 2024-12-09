@@ -7,9 +7,9 @@
 - [Murilo](https://github.com/gebra04)
 
 ## Sobre o projeto
-Este projeto tem o objetivo de ser um repositório de repúblicas para Itajubá, permitindo que as repúblicas existentes na cidade possam se cadastrar e também cadastrar seu moradores.
+O projeto surgiu com a dificuldade de repúblicas de estudantes de manterem sua tradição, encontrando novos moradores para a casa. Seu objetivo é ser um repositório de repúblicas para Itajubá, permitindo que as repúblicas existentes na cidade possam se cadastrar e também cadastrar seu moradores, além disso, é possível adicionar informações adicionais à conta da república para atender ao interesses de quem procura uma nova casa.
 
-Com isso, o projeto resolveria um problema existente atualmente, de muitos novos estudantes não conseguirem encontrar novas moradias facilmente, e por isso a importância do projeto é que ele serviria como uma ponte entre novos estudantes e as repúblicas existentes, já que eles teriam um site organizado para procurarem, ao invés de saírem caçando na internet. 
+Com isso, o projeto resolveria um problema existente atualmente, de muitos novos estudantes não conseguirem encontrar novas moradias facilmente, e projeto é importante pois serviria como uma ponte entre novos estudantes e as repúblicas existentes, já que eles teriam um site organizado para procurarem, onde teoricamente, teriam uma coleção com todas as repúblicas da cidade em um só lugar, já contendo informações como preço médio, número de moradores etc, ao invés de saírem procurando na internet. 
 
 ## Funcionalidades
 As funcionalidades oferecidas pelo projeto são:
