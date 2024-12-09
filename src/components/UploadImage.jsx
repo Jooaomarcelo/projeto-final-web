@@ -30,9 +30,9 @@ export default function UploadImage({ name }) {
   const handleDrop = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    const [file] = e.dataTransfer.files;
-    const { name } = file;
-    setFileName(name);
+    const input = document.querySelector('input[type="file"]');
+    input.files = e.dataTransfer.files;
+    setFileName(input.files[0].name);
   };
 
   const handleDragOver = (e) => {
