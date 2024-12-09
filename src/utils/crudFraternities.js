@@ -2,6 +2,9 @@
 
 import { readDB, writeDB } from '@/utils/connectionDB';
 import { isSessionValid } from './auth';
+import { promises as fs } from 'fs';
+import path from 'path';
+import { revalidatePath } from 'next/cache';
 import * as bcrypt from 'bcryptjs';
 
 export async function getFraternity(params = null) {
@@ -42,12 +45,42 @@ export async function updateFraternity(payload) {
       frat.min_price = Number(payload.min_price);
       frat.max_price = Number(payload.max_price);
       /* Writing on db. */
-      writeDB(fraternities);
+      await writeDB(fraternities);
       return;
     }
   }
   /* Fraternity not found, returning unexpected error. */
   return { error: 'Um erro inesperado ocorreu!' };
+}
+
+export async function uploadFile(formData, name) {
+  /* Taking the image. */
+  const file = formData.get('file');
+  const [type, extension] = file.type.split('/');
+  const arrayBuffer = await file.arrayBuffer();
+  const buffer = new Uint8Array(arrayBuffer);
+  const pathImg = path.join(
+    process.cwd(),
+    'public',
+    'fraternities',
+    `logo-${name.toLowerCase().split(' ')[0]}.${extension}`
+  );
+  /* Checking the file's type. */
+  if (type !== 'image') {
+    return { error: 'O arquivo deve ser uma imagem.' };
+  }
+  /* Saving image. */
+  await fs.writeFile(pathImg, buffer);
+  /* Updating fraternity on db. */
+  const fraternities = await readDB();
+  for (const fraternity of fraternities) {
+    if (fraternity.name === name) {
+      fraternity.image = `/fraternities/logo-${name.toLowerCase().split(' ')[0]}.${extension}`;
+      await writeDB(fraternities);
+    }
+  }
+  revalidatePath(`/fraternities/${encodeURIComponent(name)}`);
+  return;
 }
 
 export async function createFraternity(fraternities, { name, email, password, number }) {
@@ -61,11 +94,11 @@ export async function createFraternity(fraternities, { name, email, password, nu
     password: hashPassword,
     whatsapp: number,
     address: {
-      "state": "",
-      "city": "",
-      "neighborhood": "",
-      "street": "",
-      "res_number": 0
+      state: '',
+      city: '',
+      neighborhood: '',
+      street: '',
+      res_number: 0,
     },
     image: '',
     description: '',

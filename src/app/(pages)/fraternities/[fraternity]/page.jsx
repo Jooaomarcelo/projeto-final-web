@@ -1,11 +1,12 @@
 import { isSessionValid, ownerToken } from '@/utils/auth';
 import { getFraternity } from '@/utils/crudFraternities';
 import { Toaster } from 'react-hot-toast';
+import Image from 'next/image';
 import MemberCard from '@/components/MemberCard';
 import FormUpdate from '@/components/FormUpdate';
 import FormFraternityMember from '@/components/FormFraternityMember';
 import FormDelete from '@/components/FormDelete';
-import Image from 'next/image';
+import UploadImage from '@/components/UploadImage';
 
 export default async function Fraternity({ params }) {
   const name = decodeURIComponent((await params).fraternity);
@@ -18,8 +19,13 @@ export default async function Fraternity({ params }) {
       <div className="flex flex-col sm:h-screen w-full">
         <div className="flex items-end w-full sm:h-[55%] bg-[url(/unifei/unifei-campo.jpg)] bg-cover bg-no-repeat bg-[center_top_100%] pt-[10%]">
           <section className="flex w-full flex-col items-center sm:h-[80%] lg:h-full sm:flex-row sm:items-end px-5">
-            <div className="h-32 sm:h-48 lg:h-full">
-              <img src={fraternity.image != '' ? fraternity.image : null} alt="" className="h-full"></img>
+            <div className="relative h-32 sm:h-48 lg:h-full group">
+              <img
+                src={fraternity.image != '' ? fraternity.image : '/icons/user-unlogged.svg'}
+                alt=""
+                className="h-full group-hover:bg-[#000000ae] transition-opacity duration-300"
+              ></img>
+              {editPermission && <UploadImage name={name} />}
             </div>
             <h1 className=" w-min lg:w-max text-4xl sm:text-7xl text-white font-bold">{fraternity.name}</h1>
           </section>
