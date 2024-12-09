@@ -27,6 +27,7 @@ export default function FormLogin() {
       /* Trying to create new fraternity. */
       const ret = await checkSignUpCredentials(userInputs);
       if (!ret) {
+        toast.success("República cadastrada com sucesso.");
         router.push('/login');
       } else {
         if (ret.error == 'Esse usuário já existe!') {
