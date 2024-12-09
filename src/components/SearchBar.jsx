@@ -73,7 +73,7 @@ export default function SearchBar() {
                 >
                   <div className="h-12 w-12">
                     <Image
-                      src={fraternity.image !== "" ? fraternity.image : "/user-unlogged.svg"}
+                      src={fraternity.image !== "" ? fraternity.image : "/icons/user-unlogged.svg"}
                       height={100}
                       width={100}
                       alt={`Logo ${fraternity.name}`}

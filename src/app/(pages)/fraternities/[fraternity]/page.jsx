@@ -27,23 +27,23 @@ export default async function Fraternity({ params }) {
           <p className="text-base sm:text-lg">{fraternity.description}</p>
           <section className="flex flex-col flex-wrap  items-center sm:flex-row gap-6 mt-6">
             <div className="h-16 min-w-[20%] px-[2%] py-[1%] flex justify-between items-center bg-gray-400 rounded-full">
-              <Image src="/wallet.svg" height={48} width={48} alt="Preço" />
+              <Image src="/icons/wallet.svg" height={48} width={48} alt="Preço" />
               <span className="text-base ext-center">
                 {fraternity.min_price} - {fraternity.max_price}
               </span>
             </div>
             <div className="h-16 px-[2%] py-[1%] flex min-w-[35%] justify-between items-center bg-gray-400 rounded-full">
-              <Image src="/local.svg" height={48} width={48} alt="Preço" />
+              <Image src="/icons/local.svg" height={48} width={48} alt="Preço" />
               <span className="text-base text-center">
                 {fraternity.address.street}, {fraternity.address.res_number} - {fraternity.address.neighborhood}
               </span>
             </div>
             <div className="h-16 min-w-[20%] px-[2%] py-[1%] flex justify-between items-center bg-gray-400 rounded-full">
-              <Image src="/msg.svg" height={48} width={48} alt="Preço" />
+              <Image src="/icons/msg.svg" height={48} width={48} alt="Preço" />
               <span className="text-base text-center">{fraternity.whatsapp}</span>
             </div>
             <div className="h-16 min-w-[15%] px-[2%] py-[1%] flex justify-between items-center bg-gray-400 rounded-full">
-              <Image src="/members.svg" height={48} width={48} alt="Preço" />
+              <Image src="/icons/members.svg" height={48} width={48} alt="Preço" />
               <span className="text-base">{fraternity.capacity}</span>
             </div>
           </section>
