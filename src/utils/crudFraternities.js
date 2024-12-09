@@ -18,7 +18,7 @@ export async function getFraternity(params = null) {
       const { id, email, password, members, ...rest } = fraternity;
       return session ? { ...rest, members } : rest;
     } else {
-      return {};
+      return false;
     }
   } else {
     //All fraternities.

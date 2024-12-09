@@ -1,6 +1,7 @@
 import { isSessionValid, ownerToken } from '@/utils/auth';
 import { getFraternity } from '@/utils/crudFraternities';
 import { Toaster } from 'react-hot-toast';
+import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import MemberCard from '@/components/MemberCard';
 import FormUpdate from '@/components/FormUpdate';
@@ -13,6 +14,10 @@ export default async function Fraternity({ params }) {
   const fraternity = await getFraternity({ name });
   const session = await isSessionValid(); //Permission to see the members.
   const editPermission = (await ownerToken()) === name; //Permission to edit the fraternity.
+
+  if (!fraternity) {
+    return notFound();
+  }
 
   return (
     <section className="flex flex-col gap-3 min-h-screen">
