@@ -18,9 +18,7 @@ export default function Home() {
         <div className="flex flex-col justify-center container py-4">
           <h2 className="text-black">Sobre Nós</h2>
           <p className="text-black">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error officia culpa praesentium optio ut? Veniam
-            nihil eum rerum aliquid cupiditate ipsam, expedita voluptate sit provident! Nobis ex exercitationem eveniet
-            eligendi.
+            Bem-vindo ao Nosso Site, o seu portal dedicado à conexão entre estudantes e repúblicas! Sabemos que encontrar o lar perfeito durante a vida acadêmica pode ser um desafio, e é por isso que criamos uma plataforma simples, prática e confiável para facilitar essa jornada.
           </p>
         </div>
       </div>
