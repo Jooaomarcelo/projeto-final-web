@@ -1,7 +1,7 @@
 'use client';
 
 import FormFraternityMember from './FormFraternityMember';
-import { deleteFraternityMember } from '../utils/crudFraternityMembers';
+import { deleteFraternityMember, newMemberAvatar } from '../utils/crudFraternityMembers';
 import toast, { Toaster } from 'react-hot-toast';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -14,6 +14,14 @@ export default function MemberCard({ name, member, editPermission }) {
     } else {
       toast.success('Membro excluído com sucesso!', { duration: 5000 });
       window.location.reload();
+    }
+  };
+  const handleNewAvatar = async () => {
+    const res = await newMemberAvatar(name, member);
+    if (res) {
+      toast.error(res.error);
+    } else {
+      toast.success('Avatar alterado com sucesso!', { duration: 5000 });
     }
   };
 
@@ -34,6 +42,12 @@ export default function MemberCard({ name, member, editPermission }) {
       {editPermission && (
         <div className="flex flex-wrap ml gap-2">
           <FormFraternityMember action={'edit'} member={member} />
+          <button
+            onClick={handleNewAvatar}
+            className="rounded-full flex-1 bg-blue px-6 py-1 bg-blue-800 text-white text-sm font-bold"
+          >
+            Trocar de Avatar
+          </button>
           <button
             onClick={handleDeleteButton}
             className="rounded-full flex-1 bg-blue px-6 py-1 bg-red-600 text-white text-sm font-bold"
