@@ -23,7 +23,7 @@ export default async function Explore() {
               <div className="flex w-full items-center justify-between gap-2">
                 {/* Image */}
                 <div className="w-32 h-32 flex items-center justify-center">
-                  <img src={item.image || null} className="min-w-32" />
+                  <img src={item.image || "/icons/user-unlogged.svg"} className="min-w-32" />
                 </div>
                 {/* Description */}
                 <span>{item.description}</span>
