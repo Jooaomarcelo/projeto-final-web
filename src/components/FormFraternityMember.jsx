@@ -6,7 +6,7 @@ import { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 
 export default function FormFraternityMember({ action, fraternity, member }) {
-  if (!member) member = { id: '', name: '', nickname: '', Insta: '' };
+  if (!member) member = { id: '', name: '', nickname: '', seed: '', Insta: '' };
   const [initialData, setInitialData, errors, checkMember] = useMember(member);
   const [isOpen, setIsOpen] = useState(false);
 

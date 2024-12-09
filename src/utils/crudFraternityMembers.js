@@ -1,4 +1,5 @@
 import { readDB, writeDB } from './connectionDB';
+import { randomBytes } from 'crypto';
 
 export async function createMember(payload, newMember) {
   const fraternities = await readDB();
@@ -14,6 +15,7 @@ export async function createMember(payload, newMember) {
             return { error: `Membro já existe:  ${newMember.nickname}` };
           }
         });
+        newMember.seed = newMember.nickname;
         newMember.id = frat.members[frat.members.length - 1].id + 1;
         frat.members.push(newMember);
       }
@@ -48,6 +50,23 @@ export async function deleteFraternityMember(name, member) {
       const index = frat.members.findIndex((m) => m.id === member.id);
       if (index !== -1) {
         frat.members.splice(index, 1);
+        await writeDB(fraternities);
+        return;
+      }
+    }
+  }
+
+  return { error: 'Um erro inesperado ocorreu!' };
+}
+
+export async function newMemberAvatar(name, member) {
+  const fraternities = await readDB();
+
+  for (let frat of fraternities) {
+    if (frat.name === name) {
+      const index = frat.members.findIndex((m) => m.id === member.id);
+      if (index !== -1) {
+        frat.members[index].seed = randomBytes(16).toString('hex')
         await writeDB(fraternities);
         return;
       }

@@ -20,24 +20,28 @@
         "id": 2,
         "name": "Murilo",
         "nickname": "Zidane",
+        "seed": "Zidane",
         "Insta": "gebra"
       },
       {
         "id": 3,
         "name": "Matheus",
         "nickname": "CP",
+        "seed": "CP",
         "Insta": "cp"
       },
       {
         "id": 4,
         "name": "João Vitor ",
         "nickname": "Mira",
+        "seed": "Mira",
         "Insta": ""
       },
       {
         "id": 5,
         "name": "João Pedro",
         "nickname": "Johnny",
+        "seed": "Johnny",
         "Insta": "joao_pedro"
       }
     ],
@@ -65,5 +69,41 @@
     "capacity": 11,
     "min_price": 600,
     "max_price": 850
+  },
+  {
+    "id": 3,
+    "name": "JACA",
+    "email": "repjaca@gmail.com",
+    "password": "$2a$10$0tV5l0bd1stwzaVSnxAXg.Qdj7JviQ8852h8egVm0mIFnXaRPe44y",
+    "whatsapp": "19999506333",
+    "address": {
+      "cep": 37500356,
+      "state": "",
+      "city": "",
+      "neighborhood": "",
+      "street": "",
+      "res_number": 716
+    },
+    "image": "/fraternities/logo-jaca.png",
+    "description": "Localizada na Simão Mauad, 10 minutos a pé de distânica da unifei. Uma família unida e acolhedora resguardada por três feras atemorizantes: rita, jaquinha e haroldo.",
+    "members": [
+      {
+        "id": 1,
+        "name": "Diego",
+        "nickname": "m&m",
+        "seed": "m&m",
+        "Insta": "luiiis_mm"
+      },
+      {
+        "id": 2,
+        "name": "Jaquinha",
+        "nickname": "careca",
+        "seed": "6e788c55f800b5ac8e3ee7d82d1778c8",
+        "Insta": "cachorro_careca"
+      }
+    ],
+    "capacity": 10,
+    "min_price": 800,
+    "max_price": 1200
   }
 ]
