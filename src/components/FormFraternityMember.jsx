@@ -55,7 +55,7 @@ export default function FormFraternityMember({ action, fraternity, name, member 
       )}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-          <form onSubmit={handleSubmit} className="user-form w-[40%] relative py-12">
+          <form onSubmit={handleSubmit} className="user-form w-[80%] sm:w-[70%] lg:w-[40%] relative py-12">
             <button
               type="button"
               onClick={handleCloseForm}
@@ -69,7 +69,7 @@ export default function FormFraternityMember({ action, fraternity, name, member 
               name="name"
               placeholder="Nome"
               value={initialData.name}
-              className="rounded-full p-4 text-black"
+              className="rounded-full w-full p-4 text-black"
             />
             {errors && <p className="text-red-500">{errors.name}</p>}
             <input
