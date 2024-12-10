@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Poquito Más",
-    "email": "poquito@gamil.com",
+    "email": "poquito@gmail.com",
     "password": "$2a$10$SNImwM9HofPEsXyEONI3rO07Vr/HeFjYcXjJPkvII77dTttZBLEDG",
     "whatsapp": "11999999999",
     "address": {
@@ -16,32 +16,25 @@
     "description": "Localizada próxima à universidade, é conhecida por sua atmosfera acolhedora e eventos comunitários. Ideal para estudantes que buscam um ambiente de aprendizado e lazer.",
     "members": [
       {
-        "id": 2,
+        "id": 1,
         "name": "Murilo",
         "nickname": "Zidane",
-        "seed": "Zidane",
-        "Insta": "gebra"
+        "seed": "ee5cdbff7309587337c79d4d4245df46",
+        "Insta": "murilo_gebra"
+      },
+      {
+        "id": 2,
+        "name": "João Marcelo",
+        "nickname": "Zang",
+        "seed": "ab31b09bdc70a8b56116deaf66054fd3",
+        "Insta": "jooaomaarceloo"
       },
       {
         "id": 3,
-        "name": "Matheus",
-        "nickname": "CP",
-        "seed": "CP",
-        "Insta": "cp"
-      },
-      {
-        "id": 4,
-        "name": "João Vitor ",
-        "nickname": "Mira",
-        "seed": "Mira",
-        "Insta": ""
-      },
-      {
-        "id": 5,
-        "name": "João Pedro",
-        "nickname": "Johnny",
-        "seed": "Johnny",
-        "Insta": "joao_pedro"
+        "name": "Brisa",
+        "nickname": "A fera",
+        "seed": "Brisa",
+        "Insta": "a fera"
       }
     ],
     "capacity": 9,
@@ -64,7 +57,15 @@
     },
     "image": "/fraternities/logo-sbornia.png",
     "description": "Localizada na mesma avenida da Unifei, cerca de 15 minutos a pé e 5 de bicicleta. Além de ser um ambiente amigável, também conta com empregada e mais dois cachorros.",
-    "members": [],
+    "members": [
+      {
+        "id": 1,
+        "name": "Henrique",
+        "nickname": "Videco",
+        "seed": "Videco",
+        "Insta": "henriqueuz_"
+      }
+    ],
     "capacity": 11,
     "min_price": 600,
     "max_price": 850,
@@ -99,6 +100,13 @@
         "nickname": "careca",
         "seed": "813f97f2d29a2dd45321df7ddc5ee731",
         "Insta": "cachorro_careca"
+      },
+      {
+        "id": 3,
+        "name": "Diego Valim",
+        "nickname": "MM",
+        "seed": "MM",
+        "Insta": "luiiis_mm"
       }
     ],
     "capacity": 10,
