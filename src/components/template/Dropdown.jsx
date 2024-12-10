@@ -27,7 +27,7 @@ export default function Dropdown() {
   }, []);
 
   return (
-    <div className="flex flex-col absolute right-20 w-72 items-center z-50">
+    <div className="flex flex-col absolute right-0 sm:right-12 lg:right-20 w-72 items-end lg:items-center z-50">
       {/* Associate reference */}
       <UserButton
         action={() => {

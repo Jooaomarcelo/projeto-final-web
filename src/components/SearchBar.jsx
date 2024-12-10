@@ -22,7 +22,9 @@ export default function SearchBar() {
     if (newTarget === '') {
       filtered = [];
     } else {
-      filtered = data.filter((fraternity) => fraternity.name.toLowerCase().includes(newTarget.toLowerCase()) && fraternity.description !== "");
+      filtered = data.filter(
+        (fraternity) => fraternity.name.toLowerCase().includes(newTarget.toLowerCase()) && fraternity.description !== ''
+      );
     }
 
     setfilteredFraternities(filtered);
@@ -52,7 +54,7 @@ export default function SearchBar() {
 
   return (
     <div ref={searchBarRef} className="flex flex-col items-center justify-center mx-auto relative">
-      <div className="flex w-96 gap-4 m-3">
+      <div className="flex w-72 sm:w-96 gap-4 m-3">
         <input
           onChange={handleChange}
           onFocus={handleFocus}
@@ -73,7 +75,7 @@ export default function SearchBar() {
                 >
                   <div className="h-12 w-12">
                     <Image
-                      src={fraternity.image !== "" ? fraternity.image : "/icons/user-unlogged.svg"}
+                      src={fraternity.image !== '' ? fraternity.image : '/icons/user-unlogged.svg'}
                       height={100}
                       width={100}
                       alt={`Logo ${fraternity.name}`}
