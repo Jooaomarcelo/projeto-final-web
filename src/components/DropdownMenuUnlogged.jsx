@@ -60,9 +60,6 @@ export default function DropdownMenuUnlogged({ ref }) {
           />
           {errors && <p className="text-red-500">{errors.password}</p>}
         </>
-        <Link href="#" className="text-base text-white font-normal hover:underline">
-          Esqueceu senha?
-        </Link>
         <button className="bg-[#0000006b] text-white w-full rounded-full p-2 text-lg font-bold">Entrar</button>
         <span className="text-base  text-white font-normal">
           Novo aqui?{' '}

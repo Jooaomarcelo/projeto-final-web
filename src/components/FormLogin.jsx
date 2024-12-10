@@ -1,10 +1,10 @@
 'use client';
 
-import Link from "next/link";
-import toast from "react-hot-toast";
+import Link from 'next/link';
+import toast from 'react-hot-toast';
 import useLogin from '@/hooks/useLogin';
-import { checkLoginCredentials } from "@/utils/checkCredentials";
-import { useRouter } from "next/navigation";
+import { checkLoginCredentials } from '@/utils/checkCredentials';
+import { useRouter } from 'next/navigation';
 
 export default function FormLogin() {
   const [userInputs, setUserInputs, errors, checkLogin] = useLogin();
@@ -27,7 +27,7 @@ export default function FormLogin() {
       /* Trying to login. */
       const ret = await checkLoginCredentials(userInputs);
       if (!ret) {
-        router.push("/home"); //Home for now.
+        router.push('/home'); //Home for now.
       } else {
         toast.error(ret.error);
       }
@@ -58,11 +58,10 @@ export default function FormLogin() {
         />
         {errors && <p className="text-red-500">{errors.password}</p>}
       </div>
-      <Link href="" className="a-user-form">Esqueceu senha?</Link>
-      <button className="text-blue-950 text-3xl font-bold bg-white h-14 py-2 rounded-full">
-        Entrar
-      </button>
-      <Link href="/signup" className="a-user-form">Novo aqui?</Link>
+      <button className="text-blue-950 text-3xl font-bold bg-white h-14 py-2 rounded-full">Entrar</button>
+      <Link href="/signup" className="a-user-form">
+        Novo aqui?
+      </Link>
     </form>
   );
 }
